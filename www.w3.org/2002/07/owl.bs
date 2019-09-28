@@ -1,0 +1,39 @@
+<pre class='metadata'>
+Title: owl
+Shortname: owl
+Level: 1
+Status: LS-COMMIT
+ED: https://github.com/opencaesar/vocabularies/www.w3.org/2002/07/owl
+Repository: https://github.com/opencaesar/vocabularies
+Editor: Unknown
+!Copyright: 
+Boilerplate: copyright no, conformance no
+Markup Shorthands: markdown yes
+Use Dfn Panels: yes
+Abstract: 
+</pre>
+<div export=true>
+# Namespace # {#heading-namespace}
+	* owl: [http://www.w3.org/2002/07/owl#](owl.html)
+# Imports # {#heading-imports}
+*Extensions:*
+	* rdf: [http://www.w3.org/1999/02/22-rdf-syntax-ns#](../../1999/02/22-rdf-syntax-ns.html)
+	* rdfs: [http://www.w3.org/2000/01/rdf-schema#](../../2000/01/rdf-schema.html)
+# Scalars # {#heading-scalars}
+## <dfn>rational</dfn> ## {#heading-rational}
+
+*Super terms:*
+<a spec="http://www.w3.org/2002/07/owl#" lt="real">real</a>
+
+
+## <dfn>real</dfn> ## {#heading-real}
+
+*Super terms:*
+<a spec="http://www.w3.org/2001/XMLSchema#" lt="anyAtomicType">xsd:anyAtomicType</a>
+
+*Sub terms:*
+<a spec="http://www.w3.org/2002/07/owl#" lt="rational">rational</a>
+
+
+
+</div>

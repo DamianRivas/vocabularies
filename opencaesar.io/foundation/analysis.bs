@@ -1,0 +1,824 @@
+<pre class='metadata'>
+Title: Analysis Ontology
+Shortname: analysis
+Level: 1
+Status: LS-COMMIT
+ED: https://github.com/opencaesar/vocabularies/opencaesar.io/foundation/analysis
+Repository: https://github.com/opencaesar/vocabularies
+Editor: Jet Propulsion Laboratory
+!Copyright: Copyright 2019, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
+Boilerplate: copyright no, conformance no
+Markup Shorthands: markdown yes
+Use Dfn Panels: yes
+Abstract: The Analysis Ontology defines general concepts and properties for analyses (e.g., trade studies, driving requirements analysis, etc.). It provides a basis for specialization by domain experts.
+</pre>
+<div export=true>
+# Namespace # {#heading-namespace}
+	* analysis: [http://opencaesar.io/foundation/analysis#](analysis.html)
+# Imports # {#heading-imports}
+*Extensions:*
+	* mission: [http://opencaesar.io/foundation/mission#](mission.html)
+# Aspects # {#heading-aspects}
+## <dfn>AnalyzedElement</dfn> ## {#heading-AnalyzedElement}
+
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/base#" lt="AggregatedElement">base:AggregatedElement</a>, <a spec="http://opencaesar.io/foundation/base#" lt="Aggregates">base:Aggregates</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Analyzes">Analyzes</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Approves">project:Approves</a>, <a spec="http://opencaesar.io/foundation/project#" lt="AssignedElement">project:AssignedElement</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Authorizes">project:Authorizes</a>, <a spec="http://opencaesar.io/foundation/project#" lt="BelongsTo">project:BelongsTo</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Binds">project:Binds</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Characterization">Characterization</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Characterizes">Characterizes</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Component">mission:Component</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Concurs">project:Concurs</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="ConstrainedElement">ConstrainedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Constrains">Constrains</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Constraint">Constraint</a>, <a spec="http://opencaesar.io/foundation/base#" lt="ContainedElement">base:ContainedElement</a>, <a spec="http://opencaesar.io/foundation/base#" lt="Container">base:Container</a>, <a spec="http://opencaesar.io/foundation/base#" lt="Contains">base:Contains</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Criterion">Criterion</a>, <a spec="http://opencaesar.io/foundation/project#" lt="DelegatesTo">project:DelegatesTo</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Delivers">project:Delivers</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Deploys">mission:Deploys</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Describes">project:Describes</a>, <a spec="http://opencaesar.io/foundation/project#" lt="DevelopedElement">project:DevelopedElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Emits">mission:Emits</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Environment">mission:Environment</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Explains">Explains</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Flow">mission:Flow</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Function">mission:Function</a>, <a spec="http://opencaesar.io/foundation/project#" lt="HasAssignment">project:HasAssignment</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="HasCriterion">HasCriterion</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="HasMetric">HasMetric</a>, <a spec="http://opencaesar.io/foundation/project#" lt="HasParticipant">project:HasParticipant</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="HasParticipant">mission:HasParticipant</a>, <a spec="http://opencaesar.io/foundation/project#" lt="HasResponsibilityFor">project:HasResponsibilityFor</a>, <a spec="http://opencaesar.io/foundation/project#" lt="HasRole">project:HasRole</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="HasValue">HasValue</a>, <a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Induces">mission:Induces</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Influences">mission:Influences</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Ingests">mission:Ingests</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Interchange">mission:Interchange</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="InterchangePoint">mission:InterchangePoint</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="InterchangesThrough">mission:InterchangesThrough</a>, <a spec="http://opencaesar.io/foundation/project#" lt="InterchangesThrough">project:InterchangesThrough</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Interface">mission:Interface</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Invokes">mission:Invokes</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Invokes">project:Invokes</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Involves">project:Involves</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Involves">mission:Involves</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="IsTraversedBy">mission:IsTraversedBy</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Item">mission:Item</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Joins">mission:Joins</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Junction">mission:Junction</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Limits">Limits</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Manifests">project:Manifests</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="MeasuredElement">MeasuredElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Measures">Measures</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Metric">Metric</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Mission">mission:Mission</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Objective">mission:Objective</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Organization">project:Organization</a>, <a spec="http://opencaesar.io/foundation/base#" lt="Package">base:Package</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="PerformingElement">mission:PerformingElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Performs">mission:Performs</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Policy">project:Policy</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Prepares">project:Prepares</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="PresentingElement">mission:PresentingElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Presents">mission:Presents</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Produces">mission:Produces</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Produces">project:Produces</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Product">mission:Product</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Pursues">mission:Pursues</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Quantifies">Quantifies</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="QuantityValue">QuantityValue</a>, <a spec="http://opencaesar.io/foundation/project#" lt="RealizedElement">project:RealizedElement</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Realizes">project:Realizes</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Receives">mission:Receives</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Receives">project:Receives</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Refines">mission:Refines</a>, <a spec="http://opencaesar.io/foundation/project#" lt="ReliesOn">project:ReliesOn</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Represents">project:Represents</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Requirement">mission:Requirement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Sends">mission:Sends</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="SpecifiedElement">mission:SpecifiedElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Specifies">mission:Specifies</a>, <a spec="http://opencaesar.io/foundation/project#" lt="SuppliedElement">project:SuppliedElement</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Supplies">project:Supplies</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Transfers">mission:Transfers</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="TransfersIn">mission:TransfersIn</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="TransfersOut">mission:TransfersOut</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="TraversingElement">mission:TraversingElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Validates">Validates</a>
+
+
+*Relations having AnalyzedElement as range:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Analyzes">Analyzes</a>
+
+
+
+## <dfn>CharacterizedElement</dfn> ## {#heading-CharacterizedElement}
+
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/base#" lt="AggregatedElement">base:AggregatedElement</a>, <a spec="http://opencaesar.io/foundation/base#" lt="Aggregates">base:Aggregates</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Analyzes">Analyzes</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Approves">project:Approves</a>, <a spec="http://opencaesar.io/foundation/project#" lt="AssignedElement">project:AssignedElement</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Authorizes">project:Authorizes</a>, <a spec="http://opencaesar.io/foundation/project#" lt="BelongsTo">project:BelongsTo</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Binds">project:Binds</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Characterization">Characterization</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Characterizes">Characterizes</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Component">mission:Component</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Concurs">project:Concurs</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="ConstrainedElement">ConstrainedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Constrains">Constrains</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Constraint">Constraint</a>, <a spec="http://opencaesar.io/foundation/base#" lt="ContainedElement">base:ContainedElement</a>, <a spec="http://opencaesar.io/foundation/base#" lt="Container">base:Container</a>, <a spec="http://opencaesar.io/foundation/base#" lt="Contains">base:Contains</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Criterion">Criterion</a>, <a spec="http://opencaesar.io/foundation/project#" lt="DelegatesTo">project:DelegatesTo</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Delivers">project:Delivers</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Deploys">mission:Deploys</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Describes">project:Describes</a>, <a spec="http://opencaesar.io/foundation/project#" lt="DevelopedElement">project:DevelopedElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Emits">mission:Emits</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Environment">mission:Environment</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Explains">Explains</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Flow">mission:Flow</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Function">mission:Function</a>, <a spec="http://opencaesar.io/foundation/project#" lt="HasAssignment">project:HasAssignment</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="HasCriterion">HasCriterion</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="HasMetric">HasMetric</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="HasParticipant">mission:HasParticipant</a>, <a spec="http://opencaesar.io/foundation/project#" lt="HasParticipant">project:HasParticipant</a>, <a spec="http://opencaesar.io/foundation/project#" lt="HasResponsibilityFor">project:HasResponsibilityFor</a>, <a spec="http://opencaesar.io/foundation/project#" lt="HasRole">project:HasRole</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="HasValue">HasValue</a>, <a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Induces">mission:Induces</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Influences">mission:Influences</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Ingests">mission:Ingests</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Interchange">mission:Interchange</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="InterchangePoint">mission:InterchangePoint</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="InterchangesThrough">mission:InterchangesThrough</a>, <a spec="http://opencaesar.io/foundation/project#" lt="InterchangesThrough">project:InterchangesThrough</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Interface">mission:Interface</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Invokes">mission:Invokes</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Invokes">project:Invokes</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Involves">mission:Involves</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Involves">project:Involves</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="IsTraversedBy">mission:IsTraversedBy</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Item">mission:Item</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Joins">mission:Joins</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Junction">mission:Junction</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Limits">Limits</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Manifests">project:Manifests</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="MeasuredElement">MeasuredElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Measures">Measures</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Metric">Metric</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Mission">mission:Mission</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Objective">mission:Objective</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Organization">project:Organization</a>, <a spec="http://opencaesar.io/foundation/base#" lt="Package">base:Package</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="PerformingElement">mission:PerformingElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Performs">mission:Performs</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Policy">project:Policy</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Prepares">project:Prepares</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="PresentingElement">mission:PresentingElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Presents">mission:Presents</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Produces">mission:Produces</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Produces">project:Produces</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Product">mission:Product</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Pursues">mission:Pursues</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Quantifies">Quantifies</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="QuantityValue">QuantityValue</a>, <a spec="http://opencaesar.io/foundation/project#" lt="RealizedElement">project:RealizedElement</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Realizes">project:Realizes</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Receives">project:Receives</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Receives">mission:Receives</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Refines">mission:Refines</a>, <a spec="http://opencaesar.io/foundation/project#" lt="ReliesOn">project:ReliesOn</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Represents">project:Represents</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Requirement">mission:Requirement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Sends">mission:Sends</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="SpecifiedElement">mission:SpecifiedElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Specifies">mission:Specifies</a>, <a spec="http://opencaesar.io/foundation/project#" lt="SuppliedElement">project:SuppliedElement</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Supplies">project:Supplies</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Transfers">mission:Transfers</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="TransfersIn">mission:TransfersIn</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="TransfersOut">mission:TransfersOut</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="TraversingElement">mission:TraversingElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Validates">Validates</a>
+
+
+*Relations having CharacterizedElement as range:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Characterizes">Characterizes</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Explains">Explains</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Limits">Limits</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Validates">Validates</a>
+
+
+
+## <dfn>ConstrainedElement</dfn> ## {#heading-ConstrainedElement}
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>
+
+
+*Relations having ConstrainedElement as range:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Constrains">Constrains</a>
+
+
+
+## <dfn>MeasuredElement</dfn> ## {#heading-MeasuredElement}
+<para>A <classname>MeasuredElement</classname> is a model element that may be measured by one or
+        more associated <classname>Metric</classname>s. Both <classname>Objective</classname>s and
+            <classname>Requirement</classname>s</para>
+    <para>are <classname>MeasuredElement</classname>s.</para>
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/project#" lt="Concern">project:Concern</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Objective">mission:Objective</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Requirement">mission:Requirement</a>
+
+
+*Relations having MeasuredElement as range:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Measures">Measures</a>
+
+
+
+# External Aspects # {#heading-external-aspects}
+## <a spec="http://opencaesar.io/foundation/base#" lt="AggregatedElement">base:AggregatedElement</a> ## {#heading-base:AggregatedElement}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/base#" lt="ContainedElement">base:ContainedElement</a> ## {#heading-base:ContainedElement}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/base#" lt="Container">base:Container</a> ## {#heading-base:Container}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a> ## {#heading-base:IdentifiedElement}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="PerformingElement">mission:PerformingElement</a> ## {#heading-mission:PerformingElement}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="PresentingElement">mission:PresentingElement</a> ## {#heading-mission:PresentingElement}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="SpecifiedElement">mission:SpecifiedElement</a> ## {#heading-mission:SpecifiedElement}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="TraversingElement">mission:TraversingElement</a> ## {#heading-mission:TraversingElement}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+# Concepts # {#heading-concepts}
+## <dfn>Analysis</dfn> ## {#heading-Analysis}
+<classname>Analysis</classname> is a deprecated synonym for <classname>Explanation</classname>.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Explanation">Explanation</a>
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="CostEstimate">CostEstimate</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="DrivingRequirementsExplanation">DrivingRequirementsExplanation</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="KeyRequirementsExplanation">KeyRequirementsExplanation</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="TradeStudy">TradeStudy</a>
+
+
+
+
+
+## <dfn>Assumption</dfn> ## {#heading-Assumption}
+An <classname>Assumption</classname> is <classname>Characterization</classname> that is taken to be true for the purpose of analysis.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Characterization">Characterization</a>
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Fact">Fact</a>
+
+*Relations having Assumption as domain:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Limits">Limits</a>
+
+
+
+
+## <dfn>Characterization</dfn> ## {#heading-Characterization}
+A <classname>Characterization</classname> is an element that provides a parametric or other characterization of another model element. The canonical example of a <classname>Characterization</classname> is a set of name/value pairs, but other characterizations (e.g., classification) are possible.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>, <a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Assumption">Assumption</a>, <a spec="http://opencaesar.io/foundation/project#" lt="DevelopmentState">project:DevelopmentState</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Explanation">Explanation</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Quantity">Quantity</a>
+
+*Relations having Characterization as domain:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Characterizes">Characterizes</a>
+
+
+
+
+## <dfn>Constraint</dfn> ## {#heading-Constraint}
+A <classname>Constaint</classname> is a container for one or more mathematical expressions asserting constraints on values.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>
+
+*Relations having Constraint as domain:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Constrains">Constrains</a>
+
+
+
+
+## <dfn>CostEstimate</dfn> ## {#heading-CostEstimate}
+A <classname>CostEstimate</classname> is a kind of <classname>Explanation</classname> that provides a cost estimate for the model elements it explains.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Analysis">Analysis</a>
+
+
+
+
+
+## <dfn>Criterion</dfn> ## {#heading-Criterion}
+<para>A <classname>Criterion</classname> establishes a region for some
+            <classname>Metric</classname> that corresponds to success for some <classname>MeasuredElement</classname>.</para>
+    <para>A <classname>Criterion</classname> for the <classname>Metric</classname>
+        <emphasis role="italic">sample mass in kg</emphasis> might be <emphasis role="italic">at
+            least 10 kg</emphasis>.</para>
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>, <a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+*Relations having Criterion as domain:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Measures">Measures</a>
+
+*Relations having Criterion as range:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="HasCriterion">HasCriterion</a>
+
+
+
+## <dfn>DrivingRequirementsAnalysis</dfn> ## {#heading-DrivingRequirementsAnalysis}
+<classname>DrivingRequirementsAnalysis</classname> is a deprecated synonym for <classname>DrivingRequirementsExplanation</classname>.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="DrivingRequirementsExplanation">DrivingRequirementsExplanation</a>
+
+
+
+
+
+## <dfn>DrivingRequirementsExplanation</dfn> ## {#heading-DrivingRequirementsExplanation}
+A <classname>DrivingRequirementsAnalysis</classname> provides the rationale for designating a set of <classname>Requirement</classname>s as <emphasis>driving</emphasis>, and makes the designation via the <property>explains</property> property.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Analysis">Analysis</a>
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="DrivingRequirementsAnalysis">DrivingRequirementsAnalysis</a>
+
+
+
+
+
+## <dfn>Explanation</dfn> ## {#heading-Explanation}
+<para>An <classname>Explanation</classname> is a product that captures or summarizes the results of
+        an analysis activity and relates it to one or more other model elements. It may
+        contain narrative prose directly or provide a reference to external products.</para>
+    <para>Driving requirements analyses, trade studies, and cost estimates are all examples of
+            <classname>Explanation</classname>.</para>
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base#" lt="AggregatedElement">base:AggregatedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Characterization">Characterization</a>
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Analysis">Analysis</a>
+
+*Relations having Explanation as domain:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Analyzes">Analyzes</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Explains">Explains</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Validates">Validates</a>
+
+
+
+
+## <dfn>Fact</dfn> ## {#heading-Fact}
+A <classname>Fact</classname> is an <classname>Assumption</classname> that is true.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Assumption">Assumption</a>
+
+
+
+
+
+## <dfn>KeyRequirementsAnalysis</dfn> ## {#heading-KeyRequirementsAnalysis}
+<classname>KeyRequirementsAnalysis</classname> is a deprecated synonym for <classname>KeyRequirementsExplanation</classname>.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="KeyRequirementsExplanation">KeyRequirementsExplanation</a>
+
+
+
+
+
+## <dfn>KeyRequirementsExplanation</dfn> ## {#heading-KeyRequirementsExplanation}
+A <classname>KeyRequirementsAnalysis</classname> provides the rationale for designating a set of <classname>Requirement</classname>s as <emphasis>key</emphasis>, and makes the designation via the <property>explains</property> property.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Analysis">Analysis</a>
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="KeyRequirementsAnalysis">KeyRequirementsAnalysis</a>
+
+
+
+
+
+## <dfn>Metric</dfn> ## {#heading-Metric}
+<para>A <classname>Metric</classname> establishes a method for quantifying achievement or
+        satisfaction of one or more <classname>MeasuredElement</classname>s. Note that the
+        relationship is many to many: a given <classname>Metric</classname> may jointly quantify
+        multiple <classname>MeasuredElement</classname>s. Likewise, a
+            <classname>MeasuredElement</classname> may be quantified by multiple
+            <classname>Metric</classname>s.</para>
+    <para>Appropriate <classname>Metric</classname>s for the <classname>Objective</classname>
+        <emphasis role="italic">image Martian north polar region</emphasis> might include data
+        volumes at specified wavelength and resolution.</para>
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>, <a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+*Relations having Metric as domain:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="HasCriterion">HasCriterion</a>
+
+*Relations having Metric as range:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="HasMetric">HasMetric</a>
+
+
+
+## <dfn>Quantity</dfn> ## {#heading-Quantity}
+TODO: analysis:Quantification subclass of qudv:Quantity
+<para>A <classname>Quantity</classname> attaches a value for some
+            <classname>Metric</classname> to one or more <classname>SpecifiedElement</classname>s.
+        That is, it evaluates some aspect of a design by assigning a definite value to a specific
+            <classname>Metric</classname>.</para>
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Characterization">Characterization</a>
+
+*Relations having Quantity as domain:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="HasMetric">HasMetric</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="HasValue">HasValue</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Quantifies">Quantifies</a>
+
+
+
+
+## <dfn>QuantityValue</dfn> ## {#heading-QuantityValue}
+A <classname>QuantityValue</classname> assigns a value to a <classname>Quantity</classname>.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>
+
+
+*Relations having QuantityValue as range:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="HasValue">HasValue</a>
+
+
+
+## <dfn>TradeStudy</dfn> ## {#heading-TradeStudy}
+A <classname>TradeStudy</classname> explains some set of model elements and their properties through comparison with alternatives.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Analysis">Analysis</a>
+
+
+
+
+
+# External Concepts # {#heading-external-concepts}
+## <a spec="http://opencaesar.io/foundation/base#" lt="Package">base:Package</a> ## {#heading-base:Package}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Component">mission:Component</a> ## {#heading-mission:Component}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Environment">mission:Environment</a> ## {#heading-mission:Environment}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Flow">mission:Flow</a> ## {#heading-mission:Flow}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Function">mission:Function</a> ## {#heading-mission:Function}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Interchange">mission:Interchange</a> ## {#heading-mission:Interchange}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="InterchangePoint">mission:InterchangePoint</a> ## {#heading-mission:InterchangePoint}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Interface">mission:Interface</a> ## {#heading-mission:Interface}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Item">mission:Item</a> ## {#heading-mission:Item}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Junction">mission:Junction</a> ## {#heading-mission:Junction}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Mission">mission:Mission</a> ## {#heading-mission:Mission}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Objective">mission:Objective</a> ## {#heading-mission:Objective}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">MeasuredElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Product">mission:Product</a> ## {#heading-mission:Product}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Requirement">mission:Requirement</a> ## {#heading-mission:Requirement}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">MeasuredElement</a>
+
+
+# Reified Relationships # {#heading-reifiedrelationships}
+## <dfn>Analyzes</dfn> ## {#heading-Analyzes}
+An <classname>Explanation</classname> <replaceable>a</replaceable> <property>analyzes</property> some <classname>IdentifiedElement</classname> <replaceable>e</replaceable> if and only if <replaceable>a</replaceable> considers or otherwise takes account of <replaceable>e</replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Explanation">Explanation</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>
+
+*Forward:*
+<dfn attribute for=Analyzes>analyzes</dfn>
+
+*Inverse:*
+<dfn attribute for=Analyzes>isAnalyzedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>
+
+## <dfn>Characterizes</dfn> ## {#heading-Characterizes}
+See <property>characterizes</property>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Characterization">Characterization</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>
+
+*Forward:*
+<dfn attribute for=Characterizes>characterizes</dfn>
+
+*Inverse:*
+<dfn attribute for=Characterizes>isCharacterizedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="SpecifiedElement">mission:SpecifiedElement</a>
+
+*Sub terms:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Explains">Explains</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Limits">Limits</a>
+
+## <dfn>Constrains</dfn> ## {#heading-Constrains}
+A <classname>Constraint</classname> <replaceable>c</replaceable> <property>constrains</property> some <classname>ConstrainedElement</classname> <replaceable>e</replaceable> if and only if <replaceable>c</replaceable> imposes restrictions on one or more properties of  <replaceable>e</replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Constraint">Constraint</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="ConstrainedElement">ConstrainedElement</a>
+
+*Forward:*
+<dfn attribute for=Constrains>constrains</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>
+
+## <dfn>Explains</dfn> ## {#heading-Explains}
+See <property>explains</property>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Explanation">Explanation</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>
+
+*Forward:*
+<dfn attribute for=Explains>explains</dfn>
+
+*Inverse:*
+<dfn attribute for=Explains>isExplainedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Characterizes">Characterizes</a>
+
+*Sub terms:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Validates">Validates</a>
+
+## <dfn>HasCriterion</dfn> ## {#heading-HasCriterion}
+<para>A <classname>Metric</classname>
+        <replaceable>m</replaceable> <property>hasCriterion</property> some
+        <classname>Criterion</classname>
+        <replaceable>c</replaceable> if and only if <replaceable>c</replaceable> establishes a region of success for <replaceable>m</replaceable>.</para>
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Metric">Metric</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Criterion">Criterion</a>
+
+*Forward:*
+<dfn attribute for=HasCriterion>hasCriterion</dfn>
+
+*Inverse:*
+<dfn attribute for=HasCriterion>isCriterionFor</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>
+
+## <dfn>HasMetric</dfn> ## {#heading-HasMetric}
+<para>An <classname>Quantification</classname>
+        <replaceable>q</replaceable> <property>hasMetric</property> some
+            <classname>Metric</classname>
+        <replaceable>m</replaceable> if and only if <replaceable>q</replaceable> assigns a value to
+            <replaceable>m</replaceable> for some aspect of a design.</para>
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Quantity">Quantity</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Metric">Metric</a>
+
+*Forward:*
+<dfn attribute for=HasMetric>hasMetric</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>
+
+## <dfn>HasValue</dfn> ## {#heading-HasValue}
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Quantity">Quantity</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="QuantityValue">QuantityValue</a>
+
+*Forward:*
+<dfn attribute for=HasValue>hasValue</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>
+
+## <dfn>Limits</dfn> ## {#heading-Limits}
+An
+<classname>Assumption</classname>
+<replaceable>a</replaceable>
+<property>limits</property>
+a
+<classname>CharacterizedElement</classname>
+<replaceable>e</replaceable>
+if and only if
+<replaceable>a</replaceable>
+is restricted in some fashion by
+<replaceable>e</replaceable>.
+See <property>limits</property>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Assumption">Assumption</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>
+
+*Forward:*
+<dfn attribute for=Limits>limits</dfn>
+
+*Inverse:*
+<dfn attribute for=Limits>isLimitedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Characterizes">Characterizes</a>
+
+## <dfn>Measures</dfn> ## {#heading-Measures}
+<para>A <classname>Criterion</classname>
+        <replaceable>c</replaceable>
+        <property>measures</property> some <classname>MeasuredElement</classname>
+        <replaceable>e</replaceable> if and only if <replaceable>c</replaceable> defines a region for some <classname>Metric</classname> that corresponds to success
+for <replaceable>e</replaceable>.</para>
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Criterion">Criterion</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="MeasuredElement">MeasuredElement</a>
+
+*Forward:*
+<dfn attribute for=Measures>measures</dfn>
+
+*Inverse:*
+<dfn attribute for=Measures>isMeasuredBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>
+
+## <dfn>Quantifies</dfn> ## {#heading-Quantifies}
+<para>A <classname>Quantification</classname>
+        <replaceable>q</replaceable>
+        <property>quantifies</property> some <classname>SpecifiedElement</classname>
+        <replaceable>e</replaceable> if and only if <replaceable>q</replaceable> assigns a value to
+        some <classname>Metric</classname>  for <replaceable>e</replaceable>.</para>
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Quantity">Quantity</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="SpecifiedElement">mission:SpecifiedElement</a>
+
+*Forward:*
+<dfn attribute for=Quantifies>quantifies</dfn>
+
+*Inverse:*
+<dfn attribute for=Quantifies>isQuantifiedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>
+
+## <dfn>Validates</dfn> ## {#heading-Validates}
+An <classname>Explanation</classname> <replaceable>a</replaceable> <property>validates</property> some <classname>SpecifiedElement</classname> <replaceable>e</replaceable> if and only if <replaceable>a</replaceable> provides a definitive, determinative explanation for some design aspect of <replaceable>e</replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Explanation">Explanation</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>
+
+*Forward:*
+<dfn attribute for=Validates>validates</dfn>
+
+*Inverse:*
+<dfn attribute for=Validates>isValidatedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="AnalyzedElement">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="CharacterizedElement">CharacterizedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Explains">Explains</a>
+
+# External Reified Relationships # {#heading-external-reifiedrelationships}
+## <a spec="http://opencaesar.io/foundation/base#" lt="Aggregates">base:Aggregates</a> ## {#heading-base:Aggregates}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/base#" lt="Contains">base:Contains</a> ## {#heading-base:Contains}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Deploys">mission:Deploys</a> ## {#heading-mission:Deploys}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Emits">mission:Emits</a> ## {#heading-mission:Emits}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="HasParticipant">mission:HasParticipant</a> ## {#heading-mission:HasParticipant}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Induces">mission:Induces</a> ## {#heading-mission:Induces}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Influences">mission:Influences</a> ## {#heading-mission:Influences}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Ingests">mission:Ingests</a> ## {#heading-mission:Ingests}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="InterchangesThrough">mission:InterchangesThrough</a> ## {#heading-mission:InterchangesThrough}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Invokes">mission:Invokes</a> ## {#heading-mission:Invokes}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Involves">mission:Involves</a> ## {#heading-mission:Involves}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="IsTraversedBy">mission:IsTraversedBy</a> ## {#heading-mission:IsTraversedBy}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Joins">mission:Joins</a> ## {#heading-mission:Joins}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Performs">mission:Performs</a> ## {#heading-mission:Performs}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Presents">mission:Presents</a> ## {#heading-mission:Presents}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Produces">mission:Produces</a> ## {#heading-mission:Produces}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Pursues">mission:Pursues</a> ## {#heading-mission:Pursues}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Receives">mission:Receives</a> ## {#heading-mission:Receives}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Refines">mission:Refines</a> ## {#heading-mission:Refines}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Sends">mission:Sends</a> ## {#heading-mission:Sends}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Specifies">mission:Specifies</a> ## {#heading-mission:Specifies}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="Transfers">mission:Transfers</a> ## {#heading-mission:Transfers}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="TransfersIn">mission:TransfersIn</a> ## {#heading-mission:TransfersIn}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission#" lt="TransfersOut">mission:TransfersOut</a> ## {#heading-mission:TransfersOut}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/analysis#">AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis#">CharacterizedElement</a>
+
+
+
+</div>

@@ -1,0 +1,169 @@
+<pre class='metadata'>
+Title: Base Ontology
+Shortname: base
+Level: 1
+Status: LS-COMMIT
+ED: https://github.com/opencaesar/vocabularies/opencaesar.io/foundation/base
+Repository: https://github.com/opencaesar/vocabularies
+Editor: Jet Propulsion Laboratory
+!Copyright: Copyright 2019, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
+Boilerplate: copyright no, conformance no
+Markup Shorthands: markdown yes
+Use Dfn Panels: yes
+Abstract: The Base Ontology defines foundation concepts that are common to multiple specialized ontologies.
+</pre>
+<div export=true>
+# Namespace # {#heading-namespace}
+	* base: [http://opencaesar.io/foundation/base#](base.html)
+# Imports # {#heading-imports}
+*Extensions:*
+	* owl: [http://www.w3.org/2002/07/owl#](../../www.w3.org/2002/07/owl.html)
+	* dc: [http://purl.org/dc/elements/1.1/](../../purl.org/dc/elements/1.1.html)
+# Aspects # {#heading-aspects}
+## <dfn>AggregatedElement</dfn> ## {#heading-AggregatedElement}
+<para>An <classname>AggregatedElement</classname> is any model element that may have the <property>isAggregatedIn</property> property with some other model element.
+</para><para>
+Aggregation is a non-hierarchical relationship appropriate for elements such as <classname>mission:Environment</classname>s, <classname>mission:Objective</classname>s, and <classname>project:Product</classname>s.
+</para>
+
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Component">mission:Component</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Concern">project:Concern</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Environment">mission:Environment</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Explanation">analysis:Explanation</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Objective">mission:Objective</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Product">project:Product</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Product">mission:Product</a>
+
+*Relations having AggregatedElement as domain:*
+<a spec="http://opencaesar.io/foundation/base#" lt="Aggregates">Aggregates</a>
+
+*Relations having AggregatedElement as range:*
+<a spec="http://opencaesar.io/foundation/base#" lt="Aggregates">Aggregates</a>
+
+
+
+## <dfn>ContainedElement</dfn> ## {#heading-ContainedElement}
+A <classname>ContainedElement</classname> is an object that may be contained in a single <classname>Container</classname>.
+
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Component">mission:Component</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Flow">mission:Flow</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Item">mission:Item</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Junction">mission:Junction</a>
+
+
+*Relations having ContainedElement as range:*
+<a spec="http://opencaesar.io/foundation/base#" lt="Contains">Contains</a>
+
+*Properties:*
+<a spec="http://opencaesar.io/foundation/base#" lt="hasContainmentIndex">hasContainmentIndex</a>
+
+
+## <dfn>Container</dfn> ## {#heading-Container}
+A <classname>Container</classname> is an element that may contain zero or more <classname>ContainedElement</classname>. The notion of <emphasis>containment</emphasis> is general; it is specialized for more particular applications in other ontologies.
+
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Component">mission:Component</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Flow">mission:Flow</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Item">mission:Item</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Junction">mission:Junction</a>
+
+*Relations having Container as domain:*
+<a spec="http://opencaesar.io/foundation/base#" lt="Contains">Contains</a>
+
+
+
+
+## <dfn>IdentifiedElement</dfn> ## {#heading-IdentifiedElement}
+A <classname>IdentifiedElement</classname> is an object that has a
+	    unique identifier and a canonical name. In addition, the object may have multiple alternate names, abbreviations, and index entries.
+
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Characterization">analysis:Characterization</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Component">mission:Component</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Concern">project:Concern</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Criterion">analysis:Criterion</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Deliverable">project:Deliverable</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Environment">mission:Environment</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Facility">project:Facility</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Flow">mission:Flow</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Function">mission:Function</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Interchange">project:Interchange</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Interchange">mission:Interchange</a>, <a spec="http://opencaesar.io/foundation/project#" lt="InterchangePoint">project:InterchangePoint</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="InterchangePoint">mission:InterchangePoint</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Interface">mission:Interface</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Item">mission:Item</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Junction">mission:Junction</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Metric">analysis:Metric</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Mission">mission:Mission</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Objective">mission:Objective</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Objective">mission:Objective</a>, <a spec="http://opencaesar.io/foundation/base#" lt="Package">Package</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Person">project:Person</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Process">project:Process</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Product">mission:Product</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Product">project:Product</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Requirement">mission:Requirement</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Role">project:Role</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Stakeholder">project:Stakeholder</a>
+
+
+
+*Properties:*
+<a spec="http://opencaesar.io/foundation/base#" lt="hasAlternateName">hasAlternateName</a>, <a spec="http://opencaesar.io/foundation/base#" lt="hasCanonicalName">hasCanonicalName</a>, <a spec="http://opencaesar.io/foundation/base#" lt="hasDescription">hasDescription</a>, <a spec="http://opencaesar.io/foundation/base#" lt="hasIdentifier">hasIdentifier</a>, <a spec="http://opencaesar.io/foundation/base#" lt="hasIndexEntry">hasIndexEntry</a>, <a spec="http://opencaesar.io/foundation/base#" lt="hasShortName">hasShortName</a>, <a spec="http://opencaesar.io/foundation/base#" lt="hasSortKey">hasSortKey</a>, <a spec="http://opencaesar.io/foundation/base#" lt="hasUuid">hasUuid</a>
+
+
+# Concepts # {#heading-concepts}
+## <dfn>Package</dfn> ## {#heading-Package}
+A <classname>Package</classname> groups an arbitrary collection of model elements.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">IdentifiedElement</a>
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/project#" lt="Authority">project:Authority</a>, <a spec="http://opencaesar.io/foundation/project#" lt="WorkPackage">project:WorkPackage</a>
+
+
+
+
+
+# Reified Relationships # {#heading-reifiedrelationships}
+## <dfn>Aggregates</dfn> ## {#heading-Aggregates}
+An <classname>AggregatedElement</classname> <replaceable>e</replaceable> <property>aggregates</property> zero or more elements of compatible type if and only if <replaceable>e</replaceable> references or subsumes  those other elements.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/base#" lt="AggregatedElement">AggregatedElement</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/base#" lt="AggregatedElement">AggregatedElement</a>
+
+*Forward:*
+<dfn attribute for=Aggregates>aggregates</dfn>
+
+*Inverse:*
+<dfn attribute for=Aggregates>isAggregatedIn</dfn>
+
+## <dfn>Contains</dfn> ## {#heading-Contains}
+The <property>isContainedIn</property> property is used to relate classes that can be composed into a strict hierarchy. An element <property>isContainedIn</property> at most one parent element.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/base#" lt="Container">Container</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/base#" lt="ContainedElement">ContainedElement</a>
+
+*Forward:*
+<dfn attribute for=Contains>contains</dfn>
+
+*Inverse:*
+<dfn attribute for=Contains>isContainedIn</dfn>
+
+# Scalar Properties # {#heading-scalarproperties}
+## <dfn>hasAlternateName</dfn> ## {#heading-hasAlternateName}
+The <property>hasAlternateName</property> property relates an <classname>IdentifiedElement</classname> to zero or more alternate names. Alternate names need not be unique.
+Scalar range type: <a spec="http://www.w3.org/2001/XMLSchema#" lt="string">string</a>
+
+## <dfn>hasCanonicalName</dfn> ## {#heading-hasCanonicalName}
+The <property>hasCanonicalName</property> property relates an <classname>IdentifiedElement</classname> to zero or one canonical names. Canonical names need not be unique.
+Scalar range type: <a spec="http://www.w3.org/2001/XMLSchema#" lt="string">string</a>
+
+## <dfn>hasContainmentIndex</dfn> ## {#heading-hasContainmentIndex}
+The <property>hasContainmentIndex</property> indicates the unique position of a <classname>ContainedElement</classname> in a tree of <property>contains</property> relationships.
+Scalar range type: <a spec="http://www.w3.org/2001/XMLSchema#" lt="string">string</a>
+
+## <dfn>hasDescription</dfn> ## {#heading-hasDescription}
+The <property>hasDescription</property> property relates an <classname>IdentifiedElement</classname> to zero or one text descriptions.
+Scalar range type: <a spec="http://www.w3.org/2001/XMLSchema#" lt="string">string</a>
+
+## <dfn>hasIdentifier</dfn> ## {#heading-hasIdentifier}
+The <property>hasIdentifier</property> property relates an <classname>IdentifiedElement</classname> to zero or more identifiers. An identifier should belong uniquely to an <classname>IdentifiedElement</classname> in some context.
+Scalar range type: <a spec="http://www.w3.org/2001/XMLSchema#" lt="string">string</a>
+
+## <dfn>hasIndexEntry</dfn> ## {#heading-hasIndexEntry}
+The <property>hasIndexEntry</property> property relates an <classname>IdentifiedElement</classname> to zero or one terms under which it would be indexed in a document.
+Scalar range type: <a spec="http://www.w3.org/2001/XMLSchema#" lt="string">string</a>
+
+## <dfn>hasShortName</dfn> ## {#heading-hasShortName}
+The <property>hasShortName</property> property relates an <classname>IdentifiedElement</classname> to zero or more short names. Short names need not be unique.
+Scalar range type: <a spec="http://www.w3.org/2001/XMLSchema#" lt="string">string</a>
+
+## <dfn>hasSortKey</dfn> ## {#heading-hasSortKey}
+The <property>hasSortKey</property> property relates an <classname>IdentifiedElement</classname> to zero or one string-valued keys that may be used to establish its order in a sorted collection.
+Scalar range type: <a spec="http://www.w3.org/2001/XMLSchema#" lt="string">string</a>
+
+## <dfn>hasUuid</dfn> ## {#heading-hasUuid}
+The <property>hasUuid</property> property relates an <classname>IdentifiedElement</classname> to zero or one Universally Unique Identifier as defined by RFC 4122, expressed as a string.
+Scalar range type: <a spec="http://www.w3.org/2001/XMLSchema#" lt="string">string</a>
+
+
+</div>

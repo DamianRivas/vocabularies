@@ -1,0 +1,940 @@
+<pre class='metadata'>
+Title: Mission Ontology
+Shortname: mission
+Level: 1
+Status: LS-COMMIT
+ED: https://github.com/opencaesar/vocabularies/opencaesar.io/foundation/mission
+Repository: https://github.com/opencaesar/vocabularies
+Editor: Jet Propulsion Laboratory
+!Copyright: Copyright 2019, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
+Boilerplate: copyright no, conformance no
+Markup Shorthands: markdown yes
+Use Dfn Panels: yes
+Abstract: The Mission Ontology defines concepts and properties for describing missions in terms of their objectives, their constituent components, the functions those components perform, and the requirements that specify them.
+</pre>
+<div export=true>
+# Namespace # {#heading-namespace}
+	* mission: [http://opencaesar.io/foundation/mission#](mission.html)
+# Imports # {#heading-imports}
+*Extensions:*
+	* base: [http://opencaesar.io/foundation/base#](base.html)
+# Aspects # {#heading-aspects}
+## <dfn>PerformingElement</dfn> ## {#heading-PerformingElement}
+A <classname>PerformingElement</classname> is an object that <property>performs</property> one or more <classname>Function</classname>s.
+
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Component">Component</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Mission">Mission</a>
+
+*Relations having PerformingElement as domain:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Performs">Performs</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Produces">Produces</a>
+
+
+
+
+## <dfn>PresentingElement</dfn> ## {#heading-PresentingElement}
+A <classname>PresentingElement</classname> <property>present</property>s zero or more <classname>Interface</classname>s that define its connections to the outside world.
+
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Component">Component</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Interface">Interface</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Mission">Mission</a>
+
+*Relations having PresentingElement as domain:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Presents">Presents</a>
+
+
+
+
+## <dfn>SpecifiedElement</dfn> ## {#heading-SpecifiedElement}
+
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/analysis#" lt="Characterizes">analysis:Characterizes</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Component">Component</a>, <a spec="http://opencaesar.io/foundation/base#" lt="Contains">base:Contains</a>, <a spec="http://opencaesar.io/foundation/project#" lt="Executes">project:Executes</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Mission">Mission</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Performs">Performs</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Presents">Presents</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Produces">Produces</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="TransfersIn">TransfersIn</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="TransfersOut">TransfersOut</a>
+
+
+*Relations having SpecifiedElement as range:*
+<a spec="http://opencaesar.io/foundation/project#" lt="Binds">project:Binds</a>, <a spec="http://opencaesar.io/foundation/analysis#" lt="Quantifies">analysis:Quantifies</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Specifies">Specifies</a>
+
+
+
+## <dfn>TraversingElement</dfn> ## {#heading-TraversingElement}
+A <classname>TraversingElement</classname> is any model element that  <property>traverses</property> an <classname>Interface</classname>.
+
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Flow">Flow</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Item">Item</a>
+
+
+*Relations having TraversingElement as range:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="HasParticipant">HasParticipant</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="IsTraversedBy">IsTraversedBy</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Transfers">Transfers</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="TransfersIn">TransfersIn</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="TransfersOut">TransfersOut</a>
+
+
+
+# Concepts # {#heading-concepts}
+## <dfn>Component</dfn> ## {#heading-Component}
+<para>A <classname>Component</classname> is a <classname>PerformingElement</classname> that is not a <classname>Mission</classname>. Example
+            <classname>Component</classname>s include launch vehicle, spacecraft, telecommunication subsystem,
+        flight software, attitude control software, and mission operations team.</para>
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base#" lt="AggregatedElement">base:AggregatedElement</a>, <a spec="http://opencaesar.io/foundation/base#" lt="ContainedElement">base:ContainedElement</a>, <a spec="http://opencaesar.io/foundation/base#" lt="Container">base:Container</a>, <a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="PerformingElement">PerformingElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="PresentingElement">PresentingElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="SpecifiedElement">SpecifiedElement</a>
+
+*Relations having Component as domain:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Induces">Induces</a>
+
+*Relations having Component as range:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Deploys">Deploys</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Influences">Influences</a>
+
+
+
+## <dfn>Environment</dfn> ## {#heading-Environment}
+An <classname>Environment</classname> corresponds to a set of conditions in which a <classname>Component</classname> must <property>perform</property> its <classname>Function</classname>s.
+Example environments include low earth orbit, trans-Jupiter cruise, and Martian north polar surface.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base#" lt="AggregatedElement">base:AggregatedElement</a>, <a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+*Relations having Environment as domain:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Influences">Influences</a>
+
+*Relations having Environment as range:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Induces">Induces</a>
+
+
+
+## <dfn>Flow</dfn> ## {#heading-Flow}
+A <classname>Flow</classname> represents a non-discrete transfer of matter or energy between <classname>Function</classname>s. Examples of <classname>Flow</classname> include electrical power, propellant, and heat.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base#" lt="ContainedElement">base:ContainedElement</a>, <a spec="http://opencaesar.io/foundation/base#" lt="Container">base:Container</a>, <a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="TraversingElement">TraversingElement</a>
+
+
+*Relations having Flow as range:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Emits">Emits</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Ingests">Ingests</a>
+
+
+
+## <dfn>Function</dfn> ## {#heading-Function}
+<para>A <classname>Function</classname> is an operation or activity performed by a
+            <classname>Component</classname> in the context of executing a
+            <classname>Mission</classname>. Every <classname>Function</classname> is a
+            <classname>SpecifiedElement</classname>, which implies that a
+            <classname>Requirement</classname> can <property>specify</property> a
+            <classname>Function</classname>. <classname>Function</classname>s, therefore,
+        represent intended <classname>Component</classname> behavior. Example
+            <classname>Function</classname>s include <emphasis role="italic">search for life on
+            Mars</emphasis>, <emphasis role="italic">insert into Martian orbit</emphasis>, and
+            <emphasis role="italic">send instrument telemetry packet</emphasis>.</para>
+    <para><classname>Function</classname>s may <property>emit</property> or
+            <property>ingest</property>
+        <classname>Flow</classname>s representing non-discrete exchanges of matter or energy.
+            <classname>Function</classname>s may <property>send</property> or
+            <property>receive</property>
+        <classname>Item</classname>s representing discrete exchanges of matter or
+        information.</para>
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+*Relations having Function as domain:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="InterchangesThrough">InterchangesThrough</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Invokes">Invokes</a>
+
+*Relations having Function as range:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Invokes">Invokes</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Performs">Performs</a>
+
+
+
+## <dfn>Interchange</dfn> ## {#heading-Interchange}
+An <classname>Interchange</classname> represents the intended joint behavior of a pair of <classname>PerformingElement</classname>s. It indicates that a <classname>Flow</classname> or <classname>Item</classname> may be sent or emitted by one <classname>PerformingElement</classname> and received or ingested by another.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+*Relations having Interchange as domain:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="HasParticipant">HasParticipant</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Involves">Involves</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Involves1">Involves1</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Involves2">Involves2</a>
+
+
+
+
+## <dfn>InterchangePoint</dfn> ## {#heading-InterchangePoint}
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+*Relations having InterchangePoint as domain:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Emits">Emits</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Ingests">Ingests</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Receives">Receives</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Sends">Sends</a>
+
+*Relations having InterchangePoint as range:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="InterchangesThrough">InterchangesThrough</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Involves">Involves</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Involves1">Involves1</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Involves2">Involves2</a>
+
+
+
+## <dfn>Interface</dfn> ## {#heading-Interface}
+<para>An <classname>Interface</classname> represents a set of mechanical, electrical, signal, or
+        other properties that describe some aspect of a <classname>Component</classname>'s
+        connection to or interaction with another <classname>Component</classname>.</para>
+    <para>It is important to distinguish between a <classname>Component</classname>, which is a
+        discrete thing, and an <classname>Interface</classname>, which is a collection of
+        properties. In the formulation phase, for example, we might model the launch vehicle and the
+        spacecraft as <classname>Component</classname>s. The properties that describe how the
+        spacecraft is designed to attach to the launch vehicle would be captured in one
+            <classname>Interface</classname> (and associated with the spacecraft using the
+            <property>presents</property> property). The properties that describe how the launch
+        vehicle is designed or configured to attach to the spacecraft would be captured in another
+            <classname>Interface</classname>. The fact that two (or more) interfaces mate with each other is conveyed the existence of an <classname>Junction</classname> that <property>joins</property> the <classname>Interface</classname>s.</para>
+    <para>This method of modeling interfaces allows us to capture the asymmetric aspect of
+        producer/consumer relationships, as well as providing a convenient method for associating
+        the sets of properties and characterize the interconnection of any pair of
+            <classname>Component</classname>s so that they can be analyzed for consistency.</para>
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="PresentingElement">PresentingElement</a>
+
+*Relations having Interface as domain:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Transfers">Transfers</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="TransfersIn">TransfersIn</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="TransfersOut">TransfersOut</a>
+
+*Relations having Interface as range:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Joins">Joins</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Joins1">Joins1</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Joins2">Joins2</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Presents">Presents</a>
+
+
+
+## <dfn>Item</dfn> ## {#heading-Item}
+An <classname>Item</classname> is a discrete unit of material or information exchanged between two <classname>Function</classname>s.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base#" lt="ContainedElement">base:ContainedElement</a>, <a spec="http://opencaesar.io/foundation/base#" lt="Container">base:Container</a>, <a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="TraversingElement">TraversingElement</a>
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="MaterialItem">MaterialItem</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Message">Message</a>
+
+
+*Relations having Item as range:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Receives">Receives</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Sends">Sends</a>
+
+
+
+## <dfn>Junction</dfn> ## {#heading-Junction}
+<para>An <classname>Junction</classname> represents a set of mechanical, electrical, signal, or
+        other properties that are common to a set of mutually connected <classname>Interface</classname>s.</para>
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base#" lt="ContainedElement">base:ContainedElement</a>, <a spec="http://opencaesar.io/foundation/base#" lt="Container">base:Container</a>, <a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+*Relations having Junction as domain:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="IsTraversedBy">IsTraversedBy</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Joins">Joins</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Joins1">Joins1</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Joins2">Joins2</a>
+
+
+
+
+## <dfn>MaterialItem</dfn> ## {#heading-MaterialItem}
+A <classname>MaterialItem</classname> is a discrete unit of material exchanged between two <classname>Function</classname>s. Example <classname>MaterialItem</classname>s include rock hammer and soil sample.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Item">Item</a>
+
+
+
+
+
+## <dfn>Message</dfn> ## {#heading-Message}
+A <classname>Message</classname> is a discrete unit of information exchanged between two <classname>Function</classname>s. Example <classname>Message</classname>s include command, command response, and file contents.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Item">Item</a>
+
+
+
+
+
+## <dfn>Mission</dfn> ## {#heading-Mission}
+<para>
+A <classname>Mission</classname> is a <classname>PerformingElement</classname> that <property>pursue</property>s <classname>Objectives</classname>.
+</para>
+<para>
+A <classname>Mission</classname> may
+<property>contain</property>
+<classname>Component</classname>s, but the preferred relationship is that a
+<classname>Mission</classname>
+<property>deploy</property>s its systems (which are <classname>Component</classname>s). This convention allows for a <classname>Mission</classname> to be associated with shared or external <classname>Component</classname>s that it does not strictly <property>contain</property>.
+</para>
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="PerformingElement">PerformingElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="PresentingElement">PresentingElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="SpecifiedElement">SpecifiedElement</a>
+
+*Relations having Mission as domain:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Deploys">Deploys</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Pursues">Pursues</a>
+
+
+
+
+## <dfn>Objective</dfn> ## {#heading-Objective}
+<para>An <classname>Objective</classname> represents a specific interest that one or more
+        stakeholders have in the successful execution of a mission. Example
+            <classname>Objective</classname>s include characterize the extent of the Europan ocean
+        and its relation to the deeper interior, characterize the Europan ice shell and any
+        subsurface water, including their heterogeneity, and the nature of surface-ice-ocean
+        exchange, and determine global Europan surface compositions and chemistry, especially as
+        related to habitability.</para>
+    <para><classname>Objective</classname>s differ from <classname>Requirement</classname>s in that
+        they are not the result of negotiated agreement between customer and supplier, they need not
+        be mutually consistent, and a <classname>Mission</classname>
+        <property>pursues</property> but need not completely achieve all its
+            <classname>Objective</classname>s. In a sense, the set of
+            <classname>Requirement</classname>s for a <classname>Mission</classname> represents the
+        minimum acceptable achievement of <classname>Objectives</classname> for a given cost,
+        schedule, and risk.</para>
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base#" lt="AggregatedElement">base:AggregatedElement</a>, <a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+
+*Relations having Objective as range:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Pursues">Pursues</a>
+
+
+
+## <dfn>Product</dfn> ## {#heading-Product}
+A <classname>Product</classname> is a tangible artifact that results from achievement of mission objectives, e.g., a science data product, a soil sample, etc.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base#" lt="AggregatedElement">base:AggregatedElement</a>, <a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+
+*Relations having Product as range:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Produces">Produces</a>
+
+
+
+## <dfn>Requirement</dfn> ## {#heading-Requirement}
+<para>A <classname>Requirement</classname> specifies an assertion about a
+            <classname>SpecifiedElement</classname> (<classname>Component</classname>,
+            <classname>Function</classname>, or <classname>Interface</classname>) that must be true
+        for every acceptable realization of that element.</para>
+    <para>By definition, a <classname>Requirement</classname> that specifies a
+            <classname>Function</classname> is a <emphasis role="italic">functional
+            requirement</emphasis>. A <classname>Requirement</classname> that specifies an
+            <classname>Interface</classname> is an <emphasis role="italic">interface
+            requirement</emphasis>.  A <classname>Requirement</classname> that specifies a
+            <classname>Component</classname> is a <emphasis role="italic">component
+            requirement</emphasis>.</para>
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base#" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+*Relations having Requirement as domain:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Refines">Refines</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Specifies">Specifies</a>
+
+*Relations having Requirement as range:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Refines">Refines</a>
+
+*Properties:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="hasRationale">hasRationale</a>
+
+
+# Reified Relationships # {#heading-reifiedrelationships}
+## <dfn>Deploys</dfn> ## {#heading-Deploys}
+A
+a <classname>Mission</classname> <replaceable>m</replaceable> 
+<property>deploys</property>
+<classname>Component</classname> <replaceable>c</replaceable>
+if and only if <replaceable>m</replaceable> exploits or utilizes <replaceable>c</replaceable> in pursuit of  <classname>Objective</classname>s. Note that a given <classname>Mission</classname> may not <emphasis>own</emphasis> all the <classname>Component</classname>s it <property>deploys</property>; some <classname>Component</classname>s (e.g., ground system assets) may be shared with multiple missions.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Mission">Mission</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Component">Component</a>
+
+*Forward:*
+<dfn attribute for=Deploys>deploys</dfn>
+
+*Inverse:*
+<dfn attribute for=Deploys>isDeployedBy</dfn>
+
+## <dfn>Emits</dfn> ## {#heading-Emits}
+A <classname>Function</classname> <replaceable>F</replaceable>
+<property>emits</property>
+a <classname>Flow</classname> <replaceable>f</replaceable>
+if and only if <replaceable>F</replaceable> is the source of <replaceable>f</replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="InterchangePoint">InterchangePoint</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Flow">Flow</a>
+
+*Forward:*
+<dfn attribute for=Emits>emits</dfn>
+
+*Inverse:*
+<dfn attribute for=Emits>isEmittedBy</dfn>
+
+## <dfn>HasParticipant</dfn> ## {#heading-HasParticipant}
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Interchange">Interchange</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="TraversingElement">TraversingElement</a>
+
+*Forward:*
+<dfn attribute for=HasParticipant>hasParticipant</dfn>
+
+*Inverse:*
+<dfn attribute for=HasParticipant>participatesIn</dfn>
+
+## <dfn>Induces</dfn> ## {#heading-Induces}
+A
+<classname>Component</classname>
+<replaceable>c</replaceable>
+<property>induces</property>
+an
+<classname>Environment</classname>
+<replaceable>e</replaceable>
+if and only if
+<replaceable>c</replaceable>
+generates or contributes to the conditions described in
+<replaceable>e</replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Component">Component</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Environment">Environment</a>
+
+*Forward:*
+<dfn attribute for=Induces>induces</dfn>
+
+*Inverse:*
+<dfn attribute for=Induces>isInducedBy</dfn>
+
+## <dfn>Influences</dfn> ## {#heading-Influences}
+An
+<classname>Environment</classname>
+<replaceable>e</replaceable>
+<property>influences</property>
+a
+<classname>Component</classname>
+<replaceable>c</replaceable>
+if and only if
+<replaceable>c</replaceable>
+is subject to the conditions that define
+<replaceable>e</replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Environment">Environment</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Component">Component</a>
+
+*Forward:*
+<dfn attribute for=Influences>influences</dfn>
+
+*Inverse:*
+<dfn attribute for=Influences>isInfluencedBy</dfn>
+
+## <dfn>Ingests</dfn> ## {#heading-Ingests}
+An
+<classname>Function</classname>
+<replaceable>F</replaceable>
+<property>ingests</property>
+a
+<classname>Flow</classname>
+<replaceable>f</replaceable>
+if and only if
+<replaceable>F</replaceable>
+consumes or is otherwise the recipient of
+<replaceable>f</replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="InterchangePoint">InterchangePoint</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Flow">Flow</a>
+
+*Forward:*
+<dfn attribute for=Ingests>ingests</dfn>
+
+*Inverse:*
+<dfn attribute for=Ingests>isIngestedBy</dfn>
+
+## <dfn>InterchangesThrough</dfn> ## {#heading-InterchangesThrough}
+A <classname>PerformingElement</classname> <replaceable>p</replaceable> <property>interchangesThrough</property> an <classname>InterchangePoint</classname> <replaceable>i</replaceable> if and only if <replaceable>p</replaceable> has as a consequence of execution an interchange of matter or information with some other <classname>PerformingElement</classname> via <replaceable>i</replaceable>. Exactly one <classname>PerformingElement</classname> <property>interchangesThrough</property> each <classname>InterchangePoint
+</classname>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Function">Function</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="InterchangePoint">InterchangePoint</a>
+
+*Forward:*
+<dfn attribute for=InterchangesThrough>interchangesThrough</dfn>
+
+*Inverse:*
+<dfn attribute for=InterchangesThrough>isInterchangePointFor</dfn>
+
+## <dfn>Invokes</dfn> ## {#heading-Invokes}
+A
+<classname>Function</classname>
+<replaceable>f<subscript>1</subscript></replaceable>
+<property>invokes</property>
+a
+<classname>Function</classname>
+<replaceable>f<subscript>2</subscript></replaceable>
+if and only if execution of 
+<replaceable>f<subscript>1</subscript></replaceable>
+may directly cause execution of
+<replaceable>f<subscript>2</subscript></replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Function">Function</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Function">Function</a>
+
+*Forward:*
+<dfn attribute for=Invokes>invokes</dfn>
+
+*Inverse:*
+<dfn attribute for=Invokes>isInvokedBy</dfn>
+
+## <dfn>Involves</dfn> ## {#heading-Involves}
+<para>
+An <classname>Interaction</classname>
+<replaceable>i</replaceable>
+<property>involves</property>
+a pair of
+<classname>Function</classname>s
+{<replaceable>f<subscript>1</subscript></replaceable>}
+and
+{<replaceable>f<subscript>2</subscript></replaceable>}
+if and only if
+{<replaceable>f<subscript>1</subscript></replaceable>} 
+<property>emits</property> a <classname>Flow</classname> or
+<property>sends</property> an <classname>Item</classname>
+that
+{<replaceable>f<subscript>2</subscript></replaceable>} 
+<property>ingests</property> or
+<property>receives</property>,
+</para>
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Interchange">Interchange</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="InterchangePoint">InterchangePoint</a>
+
+*Forward:*
+<dfn attribute for=Involves>involves</dfn>
+
+*Inverse:*
+<dfn attribute for=Involves>isInvolvedIn</dfn>
+
+*Sub terms:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Involves1">Involves1</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Involves2">Involves2</a>
+
+## <dfn>Involves1</dfn> ## {#heading-Involves1}
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Interchange">Interchange</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="InterchangePoint">InterchangePoint</a>
+
+*Forward:*
+<dfn attribute for=Involves1>involves1</dfn>
+
+*Inverse:*
+<dfn attribute for=Involves1>isInvolvedIn1</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Involves">Involves</a>
+
+## <dfn>Involves2</dfn> ## {#heading-Involves2}
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Interchange">Interchange</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="InterchangePoint">InterchangePoint</a>
+
+*Forward:*
+<dfn attribute for=Involves2>involves2</dfn>
+
+*Inverse:*
+<dfn attribute for=Involves2>isInvolvedIn2</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Involves">Involves</a>
+
+## <dfn>IsTraversedBy</dfn> ## {#heading-IsTraversedBy}
+A <classname>TraversingElement</classname> <replaceable>e</replaceable>
+<property>traverses</property>
+an <classname>Junction</classname> <replaceable>j</replaceable>
+if and only if <replaceable>j</replaceable> provides a medium or channel for the transfer of <replaceable>e</replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Junction">Junction</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="TraversingElement">TraversingElement</a>
+
+*Forward:*
+<dfn attribute for=IsTraversedBy>isTraversedBy</dfn>
+
+*Inverse:*
+<dfn attribute for=IsTraversedBy>traverses</dfn>
+
+## <dfn>Joins</dfn> ## {#heading-Joins}
+<para>
+A <classname>Junction</classname>
+<replaceable>j</replaceable>
+<property>joins</property>
+a pair of
+<classname>Interface</classname>s
+{<replaceable>i<subscript>1</subscript></replaceable>}
+and
+{<replaceable>i<subscript>2</subscript></replaceable>}
+if and only if
+the set
+{<replaceable>i<subscript>k</subscript></replaceable>} share some type of connection and
+<replaceable>j</replaceable> represents properties common to all
+<classname>Interface</classname>s in
+{<replaceable>i<subscript>k</subscript></replaceable>} pertinent to that connection.
+</para>
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Junction">Junction</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Interface">Interface</a>
+
+*Forward:*
+<dfn attribute for=Joins>joins</dfn>
+
+*Inverse:*
+<dfn attribute for=Joins>isJoinedIn</dfn>
+
+*Sub terms:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Joins1">Joins1</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Joins2">Joins2</a>
+
+## <dfn>Joins1</dfn> ## {#heading-Joins1}
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Junction">Junction</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Interface">Interface</a>
+
+*Forward:*
+<dfn attribute for=Joins1>joins1</dfn>
+
+*Inverse:*
+<dfn attribute for=Joins1>isJoinedIn1</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Joins">Joins</a>
+
+## <dfn>Joins2</dfn> ## {#heading-Joins2}
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Junction">Junction</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Interface">Interface</a>
+
+*Forward:*
+<dfn attribute for=Joins2>joins2</dfn>
+
+*Inverse:*
+<dfn attribute for=Joins2>isJoinedIn2</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Joins">Joins</a>
+
+## <dfn>Performs</dfn> ## {#heading-Performs}
+A
+<classname>Component</classname>
+<replaceable>c</replaceable>
+<property>performs</property>
+a
+<classname>Function</classname>
+<replaceable>f</replaceable>
+if and only if
+<replaceable>c</replaceable>
+has the sole responsibility for execution of
+<replaceable>f</replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="PerformingElement">PerformingElement</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Function">Function</a>
+
+*Forward:*
+<dfn attribute for=Performs>performs</dfn>
+
+*Inverse:*
+<dfn attribute for=Performs>isPerformedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="SpecifiedElement">SpecifiedElement</a>
+
+## <dfn>Presents</dfn> ## {#heading-Presents}
+A <classname>Component</classname> <replaceable>c</replaceable> <property>presents</property> an <classname>Interface</classname> <replaceable>i</replaceable> if and only if <replaceable>c</replaceable> has a direct electrical, mechanical, or logical connection to the outside via <replaceable>i</replaceable>. Exactly one <classname>Component</classname> <property>presents</property> each <classname>Interface</classname>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="PresentingElement">PresentingElement</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Interface">Interface</a>
+
+*Forward:*
+<dfn attribute for=Presents>presents</dfn>
+
+*Inverse:*
+<dfn attribute for=Presents>isPresentedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="SpecifiedElement">SpecifiedElement</a>
+
+## <dfn>Produces</dfn> ## {#heading-Produces}
+See <property>produces</property>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="PerformingElement">PerformingElement</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Product">Product</a>
+
+*Forward:*
+<dfn attribute for=Produces>produces</dfn>
+
+*Inverse:*
+<dfn attribute for=Produces>isProducedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="SpecifiedElement">SpecifiedElement</a>
+
+## <dfn>Pursues</dfn> ## {#heading-Pursues}
+A <classname>Mission</classname> <replaceable>m</replaceable> <property>pursues</property> an <classname>Objective</classname> <replaceable>o</replaceable> if and only if the successful execution of <replaceable>m</replaceable> results in at least partial achievement of <replaceable>o</replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Mission">Mission</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Objective">Objective</a>
+
+*Forward:*
+<dfn attribute for=Pursues>pursues</dfn>
+
+*Inverse:*
+<dfn attribute for=Pursues>isPursuedBy</dfn>
+
+## <dfn>Receives</dfn> ## {#heading-Receives}
+A <classname>Function</classname> <replaceable>F</replaceable>
+<property>receives</property>
+an <classname>Item</classname> <replaceable>i</replaceable>
+if and only if <replaceable>F</replaceable> consumes <replaceable>i</replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="InterchangePoint">InterchangePoint</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Item">Item</a>
+
+*Forward:*
+<dfn attribute for=Receives>receives</dfn>
+
+*Inverse:*
+<dfn attribute for=Receives>isReceivedBy</dfn>
+
+## <dfn>Refines</dfn> ## {#heading-Refines}
+Change the superclass from base-embedding:BinaryDependency to StandardProfileL2:Refine
+A <classname>Requirement</classname> <replaceable>l</replaceable> <property>refines</property> a <classname>Requirement</classname> <replaceable>h</replaceable> if and only if satisfaction of <replaceable>l</replaceable> implies partial satisfaction of <replaceable>h</replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Requirement">Requirement</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Requirement">Requirement</a>
+
+*Forward:*
+<dfn attribute for=Refines>refines</dfn>
+
+*Inverse:*
+<dfn attribute for=Refines>isRefinedBy</dfn>
+
+## <dfn>Sends</dfn> ## {#heading-Sends}
+A <classname>Function</classname> <replaceable>F</replaceable>
+<property>sends</property>
+an <classname>Item</classname> <replaceable>i</replaceable>
+if and only if <replaceable>F</replaceable> is the source for <replaceable>i</replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="InterchangePoint">InterchangePoint</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Item">Item</a>
+
+*Forward:*
+<dfn attribute for=Sends>sends</dfn>
+
+*Inverse:*
+<dfn attribute for=Sends>isSentBy</dfn>
+
+## <dfn>Specifies</dfn> ## {#heading-Specifies}
+A <classname>Requirement</classname> <replaceable>r</replaceable> <property>specifies</property> a element <replaceable>e</replaceable> if and only if the properties of <replaceable>e</replaceable> are bound by <replaceable>r</replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Requirement">Requirement</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="SpecifiedElement">SpecifiedElement</a>
+
+*Forward:*
+<dfn attribute for=Specifies>specifies</dfn>
+
+*Inverse:*
+<dfn attribute for=Specifies>isSpecifiedBy</dfn>
+
+## <dfn>Transfers</dfn> ## {#heading-Transfers}
+An <classname>Interface</classname>
+<replaceable>i</replaceable>
+<property>transfers</property>
+a
+<classname>TraversingElement</classname>
+<replaceable>e</replaceable>
+if and only if
+<replaceable>i</replaceable>
+is the access point by which
+<replaceable>e</replaceable>
+enters or leaves a <classname>Component</classname>
+that
+<property>presents</property>
+<replaceable>i</replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Interface">Interface</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="TraversingElement">TraversingElement</a>
+
+*Forward:*
+<dfn attribute for=Transfers>transfers</dfn>
+
+*Sub terms:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="TransfersIn">TransfersIn</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="TransfersOut">TransfersOut</a>
+
+## <dfn>TransfersIn</dfn> ## {#heading-TransfersIn}
+An <classname>Interface</classname>
+<replaceable>i</replaceable>
+<property>transfersOut</property>
+a
+<classname>TraversingElement</classname>
+<replaceable>e</replaceable>
+if and only if
+<replaceable>i</replaceable>
+is the access point by which
+<replaceable>e</replaceable>
+leaves a <classname>Component</classname>
+that
+<property>presents</property>
+<replaceable>i</replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Interface">Interface</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="TraversingElement">TraversingElement</a>
+
+*Forward:*
+<dfn attribute for=TransfersIn>transfersIn</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="SpecifiedElement">SpecifiedElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Transfers">Transfers</a>
+
+## <dfn>TransfersOut</dfn> ## {#heading-TransfersOut}
+An <classname>Interface</classname>
+<replaceable>i</replaceable>
+<property>transfersOut</property>
+a
+<classname>TraversingElement</classname>
+<replaceable>e</replaceable>
+if and only if
+<replaceable>i</replaceable>
+is the access point by which
+<replaceable>e</replaceable>
+leaves a <classname>Component</classname>
+that
+<property>presents</property>
+<replaceable>i</replaceable>.
+
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="Interface">Interface</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="TraversingElement">TraversingElement</a>
+
+*Forward:*
+<dfn attribute for=TransfersOut>transfersOut</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/mission#" lt="SpecifiedElement">SpecifiedElement</a>, <a spec="http://opencaesar.io/foundation/mission#" lt="Transfers">Transfers</a>
+
+# External Reified Relationships # {#heading-external-reifiedrelationships}
+## <a spec="http://opencaesar.io/foundation/base#" lt="Contains">base:Contains</a> ## {#heading-base:Contains}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/mission#">SpecifiedElement</a>
+
+
+# Scalar Properties # {#heading-scalarproperties}
+## <dfn>hasRationale</dfn> ## {#heading-hasRationale}
+A <property>rationale</property> explains why a <classname>Requirement</classname> exists and why it <property>specifies</property> what it does.
+Scalar range type: <a spec="http://www.w3.org/2001/XMLSchema#" lt="string">string</a>
+
+
+</div>

@@ -891,7 +891,7 @@ A <classname>WorkPackage</classname> <replaceable>w</replaceable> <property>supp
 # Scalar Properties # {#heading-scalarproperties}
 ## <dfn>isRequiredNotLaterThan</dfn> ## {#heading-isRequiredNotLaterThan}
 A <classname>ScheduledElement</classname> <replaceable>e</replaceable>  <property>isRequiredNotLaterThan</property> <replaceable>d</replaceable> if and only if <replaceable>e</replaceable> must be completed or achieved no later than <replaceable>d</replaceable>.
-Scalar range type: <a spec="http://opencaesar.io/foundation/project#" lt="date">date</a>
+Scalar property type: <a spec="http://opencaesar.io/foundation/project#" lt="date">date</a>
 
 
 </div>

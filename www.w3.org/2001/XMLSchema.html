@@ -1214,7 +1214,7 @@ Possible extra rowspan handling
 </style>
   <meta content="Bikeshed version e86d5b1b47a216fa66165c234892adc259212183" name="generator">
   <link href="https://github.com/opencaesar/vocabularies/www.w3.org/2001/XMLSchema" rel="canonical">
-  <meta content="a9980d5276e98bf86adbbf4f20d194167f76c43a" name="document-revision">
+  <link href="https://opencaesar.github.io/assets/img/oml.png" rel="icon">
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1401,9 +1401,9 @@ pre .property::before, pre .property::after {
 }</style>
  <body class="h-entry">
   <div class="head">
-   <p data-fill-with="logo"></p>
+   <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml-spec/oml-logo.png"></a> </p>
    <h1 class="p-name no-ref" id="title">xsd</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2019-09-30">30 September 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2019-10-07">7 October 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1411,7 +1411,7 @@ pre .property::before, pre .property::after {
      <dt>Issue Tracking:
      <dd><a href="https://github.com/opencaesar/vocabularies/issues/">GitHub</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><span class="p-name fn">Unknown</span>
+     <dd class="editor p-author h-card vcard"><span class="p-name fn">World Wide Web Consortium</span>
      <dt>Copyright:
      <dd>
     </dl>
@@ -1421,6 +1421,9 @@ pre .property::before, pre .property::after {
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
+   <p>XML Schema: Datatypes is part 2 of the specification of the XML Schema language. It defines facilities for defining datatypes to be used in XML Schemas as well as other XML specifications. The datatype language, which is itself represented in XML 1.0, provides a superset of the capabilities found in XML 1.0 document type definitions (DTDs) for specifying datatypes on elements and attributes.</p>
+   <p>This subset reflects some of the more commonly used value types that are imported into OML.</p>
+   <p>For full documentation see <a href="https://www.w3.org/TR/xmlschema11-2">https://www.w3.org/TR/xmlschema11-2</a> </p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
@@ -1431,46 +1434,46 @@ pre .property::before, pre .property::after {
     <li>
      <a href="#heading-scalars"><span class="secno">3</span> <span class="content">Scalars</span></a>
      <ol class="toc">
-      <li><a href="#heading-anyAtomicType"><span class="secno">3.1</span> <span class="content"><span>anyAtomicType</span></span></a>
-      <li><a href="#heading-anyURI"><span class="secno">3.2</span> <span class="content"><span>anyURI</span></span></a>
-      <li><a href="#heading-base64Binary"><span class="secno">3.3</span> <span class="content"><span>base64Binary</span></span></a>
-      <li><a href="#heading-boolean"><span class="secno">3.4</span> <span class="content"><span>boolean</span></span></a>
-      <li><a href="#heading-date"><span class="secno">3.5</span> <span class="content"><span>date</span></span></a>
-      <li><a href="#heading-dateTime"><span class="secno">3.6</span> <span class="content"><span>dateTime</span></span></a>
-      <li><a href="#heading-dateTimeStamp"><span class="secno">3.7</span> <span class="content"><span>dateTimeStamp</span></span></a>
-      <li><a href="#heading-decimal"><span class="secno">3.8</span> <span class="content"><span>decimal</span></span></a>
-      <li><a href="#heading-string"><span class="secno">3.9</span> <span class="content"><span>string</span></span></a>
-      <li><a href="#heading-byte"><span class="secno">3.10</span> <span class="content"><span>byte</span></span></a>
-      <li><a href="#heading-int"><span class="secno">3.11</span> <span class="content"><span>int</span></span></a>
-      <li><a href="#heading-long"><span class="secno">3.12</span> <span class="content"><span>long</span></span></a>
-      <li><a href="#heading-negativeInteger"><span class="secno">3.13</span> <span class="content"><span>negativeInteger</span></span></a>
-      <li><a href="#heading-nonNegativeInteger"><span class="secno">3.14</span> <span class="content"><span>nonNegativeInteger</span></span></a>
-      <li><a href="#heading-nonPositiveInteger"><span class="secno">3.15</span> <span class="content"><span>nonPositiveInteger</span></span></a>
-      <li><a href="#heading-positiveInteger"><span class="secno">3.16</span> <span class="content"><span>positiveInteger</span></span></a>
-      <li><a href="#heading-short"><span class="secno">3.17</span> <span class="content"><span>short</span></span></a>
-      <li><a href="#heading-unsignedByte"><span class="secno">3.18</span> <span class="content"><span>unsignedByte</span></span></a>
-      <li><a href="#heading-unsignedInt"><span class="secno">3.19</span> <span class="content"><span>unsignedInt</span></span></a>
-      <li><a href="#heading-unsignedLong"><span class="secno">3.20</span> <span class="content"><span>unsignedLong</span></span></a>
-      <li><a href="#heading-unsignedShort"><span class="secno">3.21</span> <span class="content"><span>unsignedShort</span></span></a>
-      <li><a href="#heading-NCName"><span class="secno">3.22</span> <span class="content"><span>NCName</span></span></a>
-      <li><a href="#heading-NMTOKEN"><span class="secno">3.23</span> <span class="content"><span>NMTOKEN</span></span></a>
-      <li><a href="#heading-dayTimeDuration"><span class="secno">3.24</span> <span class="content"><span>dayTimeDuration</span></span></a>
-      <li><a href="#heading-double"><span class="secno">3.25</span> <span class="content"><span>double</span></span></a>
-      <li><a href="#heading-duration"><span class="secno">3.26</span> <span class="content"><span>duration</span></span></a>
-      <li><a href="#heading-float"><span class="secno">3.27</span> <span class="content"><span>float</span></span></a>
-      <li><a href="#heading-gDay"><span class="secno">3.28</span> <span class="content"><span>gDay</span></span></a>
-      <li><a href="#heading-gMonth"><span class="secno">3.29</span> <span class="content"><span>gMonth</span></span></a>
-      <li><a href="#heading-gMonthDay"><span class="secno">3.30</span> <span class="content"><span>gMonthDay</span></span></a>
-      <li><a href="#heading-gYear"><span class="secno">3.31</span> <span class="content"><span>gYear</span></span></a>
-      <li><a href="#heading-gYearMonth"><span class="secno">3.32</span> <span class="content"><span>gYearMonth</span></span></a>
-      <li><a href="#heading-hexBinary"><span class="secno">3.33</span> <span class="content"><span>hexBinary</span></span></a>
-      <li><a href="#heading-integer"><span class="secno">3.34</span> <span class="content"><span>integer</span></span></a>
-      <li><a href="#heading-language"><span class="secno">3.35</span> <span class="content"><span>language</span></span></a>
-      <li><a href="#heading-name"><span class="secno">3.36</span> <span class="content"><span>name</span></span></a>
-      <li><a href="#heading-normalizedString"><span class="secno">3.37</span> <span class="content"><span>normalizedString</span></span></a>
-      <li><a href="#heading-time"><span class="secno">3.38</span> <span class="content"><span>time</span></span></a>
-      <li><a href="#heading-token"><span class="secno">3.39</span> <span class="content"><span>token</span></span></a>
-      <li><a href="#heading-yearMonthDuration"><span class="secno">3.40</span> <span class="content"><span>yearMonthDuration</span></span></a>
+      <li><a href="#heading-anyAtomicType"><span class="secno">3.1</span> <span class="content"><span>anyAtomicType</span> see <span>anyAtomicType</span></span></a>
+      <li><a href="#heading-anyURI"><span class="secno">3.2</span> <span class="content"><span>anyURI</span> see <span>anyURI</span></span></a>
+      <li><a href="#heading-base64Binary"><span class="secno">3.3</span> <span class="content"><span>base64Binary</span> see <span>base64Binary</span></span></a>
+      <li><a href="#heading-boolean"><span class="secno">3.4</span> <span class="content"><span>boolean</span> see <span>boolean</span></span></a>
+      <li><a href="#heading-date"><span class="secno">3.5</span> <span class="content"><span>date</span> see <span>date</span></span></a>
+      <li><a href="#heading-dateTime"><span class="secno">3.6</span> <span class="content"><span>dateTime</span> see <span>dateTime</span></span></a>
+      <li><a href="#heading-dateTimeStamp"><span class="secno">3.7</span> <span class="content"><span>dateTimeStamp</span> see <span>dateTimeStamp</span></span></a>
+      <li><a href="#heading-decimal"><span class="secno">3.8</span> <span class="content"><span>decimal</span> see <span>decimal</span></span></a>
+      <li><a href="#heading-string"><span class="secno">3.9</span> <span class="content"><span>string</span> see <span>string</span></span></a>
+      <li><a href="#heading-byte"><span class="secno">3.10</span> <span class="content"><span>byte</span> see <span>byte</span></span></a>
+      <li><a href="#heading-int"><span class="secno">3.11</span> <span class="content"><span>int</span> see <span>int</span></span></a>
+      <li><a href="#heading-long"><span class="secno">3.12</span> <span class="content"><span>long</span> see <span>long</span></span></a>
+      <li><a href="#heading-negativeInteger"><span class="secno">3.13</span> <span class="content"><span>negativeInteger</span> see <span>negativeInteger</span></span></a>
+      <li><a href="#heading-nonNegativeInteger"><span class="secno">3.14</span> <span class="content"><span>nonNegativeInteger</span> see <span>nonNegativeInteger</span></span></a>
+      <li><a href="#heading-nonPositiveInteger"><span class="secno">3.15</span> <span class="content"><span>nonPositiveInteger</span> see <span>nonPositiveInteger</span></span></a>
+      <li><a href="#heading-positiveInteger"><span class="secno">3.16</span> <span class="content"><span>positiveInteger</span> see <span>positiveInteger</span></span></a>
+      <li><a href="#heading-short"><span class="secno">3.17</span> <span class="content"><span>short</span> see <span>short</span></span></a>
+      <li><a href="#heading-unsignedByte"><span class="secno">3.18</span> <span class="content"><span>unsignedByte</span> see <span>unsignedByte</span></span></a>
+      <li><a href="#heading-unsignedInt"><span class="secno">3.19</span> <span class="content"><span>unsignedInt</span> see <span>unsignedInt</span></span></a>
+      <li><a href="#heading-unsignedLong"><span class="secno">3.20</span> <span class="content"><span>unsignedLong</span> see <span>unsignedLong</span></span></a>
+      <li><a href="#heading-unsignedShort"><span class="secno">3.21</span> <span class="content"><span>unsignedShort</span> see <span>unsignedShort</span></span></a>
+      <li><a href="#heading-NCName"><span class="secno">3.22</span> <span class="content"><span>NCName</span> see <span>NCName</span></span></a>
+      <li><a href="#heading-NMTOKEN"><span class="secno">3.23</span> <span class="content"><span>NMTOKEN</span> see <span>NMTOKEN</span></span></a>
+      <li><a href="#heading-dayTimeDuration"><span class="secno">3.24</span> <span class="content"><span>dayTimeDuration</span> see <span>dayTimeDuration</span></span></a>
+      <li><a href="#heading-double"><span class="secno">3.25</span> <span class="content"><span>double</span> see <span>double</span></span></a>
+      <li><a href="#heading-duration"><span class="secno">3.26</span> <span class="content"><span>duration</span> see <span>duration</span></span></a>
+      <li><a href="#heading-float"><span class="secno">3.27</span> <span class="content"><span>float</span> see <span>float</span></span></a>
+      <li><a href="#heading-gDay"><span class="secno">3.28</span> <span class="content"><span>gDay</span> see <span>gDay</span></span></a>
+      <li><a href="#heading-gMonth"><span class="secno">3.29</span> <span class="content"><span>gMonth</span> see <span>gMonth</span></span></a>
+      <li><a href="#heading-gMonthDay"><span class="secno">3.30</span> <span class="content"><span>gMonthDay</span> see <span>gMonthDay</span></span></a>
+      <li><a href="#heading-gYear"><span class="secno">3.31</span> <span class="content"><span>gYear</span> see <span>gYear</span></span></a>
+      <li><a href="#heading-gYearMonth"><span class="secno">3.32</span> <span class="content"><span>gYearMonth</span> see <span>gYearMonth</span></span></a>
+      <li><a href="#heading-hexBinary"><span class="secno">3.33</span> <span class="content"><span>hexBinary</span> see <span>hexBinary</span></span></a>
+      <li><a href="#heading-integer"><span class="secno">3.34</span> <span class="content"><span>integer</span> see <span>integer</span></span></a>
+      <li><a href="#heading-language"><span class="secno">3.35</span> <span class="content"><span>language</span> see <span>language</span></span></a>
+      <li><a href="#heading-name"><span class="secno">3.36</span> <span class="content"><span>name</span> see <span>name</span></span></a>
+      <li><a href="#heading-normalizedString"><span class="secno">3.37</span> <span class="content"><span>normalizedString</span> see <span>normalizedString</span></span></a>
+      <li><a href="#heading-time"><span class="secno">3.38</span> <span class="content"><span>time</span> see <span>time</span></span></a>
+      <li><a href="#heading-token"><span class="secno">3.39</span> <span class="content"><span>token</span> see <span>token</span></span></a>
+      <li><a href="#heading-yearMonthDuration"><span class="secno">3.40</span> <span class="content"><span>yearMonthDuration</span> see <span>yearMonthDuration</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1489,94 +1492,95 @@ pre .property::before, pre .property::after {
     </ul>
     <h2 class="heading settled" data-level="2" id="heading-imports"><span class="secno">2. </span><span class="content">Imports</span><a class="self-link" href="#heading-imports"></a></h2>
      <em>Extensions:</em> 
+    <ul>
+     <li data-md>
+      <p>dc: <a href="../../purl.org/dc/elements/1.1.html">http://purl.org/dc/elements/1.1/</a></p>
+    </ul>
     <h2 class="heading settled" data-level="3" id="heading-scalars"><span class="secno">3. </span><span class="content">Scalars</span><a class="self-link" href="#heading-scalars"></a></h2>
-    <h3 class="heading settled" data-level="3.1" id="heading-anyAtomicType"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="anyatomictype">anyAtomicType<a class="self-link" href="#anyatomictype"></a></dfn></span><a class="self-link" href="#heading-anyAtomicType"></a></h3>
-    <p><em>Sub terms:</em> <a data-link-type="dfn" href="XMLSchema.html#double" id="ref-for-double">double</a>, <a data-link-type="dfn" href="XMLSchema.html#duration" id="ref-for-duration">duration</a>, <a data-link-type="dfn" href="XMLSchema.html#float" id="ref-for-float">float</a>, <a data-link-type="dfn" href="XMLSchema.html#gday" id="ref-for-gday">gDay</a>, <a data-link-type="dfn" href="XMLSchema.html#gmonth" id="ref-for-gmonth">gMonth</a>, <a data-link-type="dfn" href="XMLSchema.html#gmonthday" id="ref-for-gmonthday">gMonthDay</a>, <a data-link-type="dfn" href="XMLSchema.html#gyear" id="ref-for-gyear">gYear</a>, <a data-link-type="dfn" href="XMLSchema.html#gyearmonth" id="ref-for-gyearmonth">gYearMonth</a>, <a data-link-type="dfn" href="XMLSchema.html#hexbinary" id="ref-for-hexbinary">hexBinary</a>, <a data-link-type="dfn" href="../2002/07/owl.html#real" id="ref-for-real">owl:real</a>, <a data-link-type="dfn" href="XMLSchema.html#time" id="ref-for-time">time</a></p>
-    <h3 class="heading settled" data-level="3.2" id="heading-anyURI"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="anyuri">anyURI<a class="self-link" href="#anyuri"></a></dfn></span><a class="self-link" href="#heading-anyURI"></a></h3>
-    <h3 class="heading settled" data-level="3.3" id="heading-base64Binary"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="base64binary">base64Binary<a class="self-link" href="#base64binary"></a></dfn></span><a class="self-link" href="#heading-base64Binary"></a></h3>
-    <h3 class="heading settled" data-level="3.4" id="heading-boolean"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="boolean">boolean<a class="self-link" href="#boolean"></a></dfn></span><a class="self-link" href="#heading-boolean"></a></h3>
-    <h3 class="heading settled" data-level="3.5" id="heading-date"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="date">date<a class="self-link" href="#date"></a></dfn></span><a class="self-link" href="#heading-date"></a></h3>
-    <h3 class="heading settled" data-level="3.6" id="heading-dateTime"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="datetime">dateTime<a class="self-link" href="#datetime"></a></dfn></span><a class="self-link" href="#heading-dateTime"></a></h3>
-    <h3 class="heading settled" data-level="3.7" id="heading-dateTimeStamp"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="datetimestamp">dateTimeStamp<a class="self-link" href="#datetimestamp"></a></dfn></span><a class="self-link" href="#heading-dateTimeStamp"></a></h3>
-    <h3 class="heading settled" data-level="3.8" id="heading-decimal"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="decimal">decimal<a class="self-link" href="#decimal"></a></dfn></span><a class="self-link" href="#heading-decimal"></a></h3>
-    <p><em>Sub terms:</em> <a data-link-type="dfn" href="XMLSchema.html#integer" id="ref-for-integer">integer</a></p>
-    <h3 class="heading settled" data-level="3.9" id="heading-string"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="string">string<a class="self-link" href="#string"></a></dfn></span><a class="self-link" href="#heading-string"></a></h3>
-    <p><em>Sub terms:</em> <a data-link-type="dfn" href="XMLSchema.html#normalizedstring" id="ref-for-normalizedstring">normalizedString</a></p>
-    <h3 class="heading settled" data-level="3.10" id="heading-byte"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="byte">byte<a class="self-link" href="#byte"></a></dfn></span><a class="self-link" href="#heading-byte"></a></h3>
+    <h3 class="heading settled" data-level="3.1" id="heading-anyAtomicType"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="anyatomictype">anyAtomicType<a class="self-link" href="#anyatomictype"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#anyAtomicType">anyAtomicType</a></span><a class="self-link" href="#heading-anyAtomicType"></a></h3>
+    <h3 class="heading settled" data-level="3.2" id="heading-anyURI"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="anyuri">anyURI<a class="self-link" href="#anyuri"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#anyURI">anyURI</a></span><a class="self-link" href="#heading-anyURI"></a></h3>
+    <h3 class="heading settled" data-level="3.3" id="heading-base64Binary"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="base64binary">base64Binary<a class="self-link" href="#base64binary"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#base64Binary">base64Binary</a></span><a class="self-link" href="#heading-base64Binary"></a></h3>
+    <h3 class="heading settled" data-level="3.4" id="heading-boolean"><span class="secno">3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="boolean">boolean<a class="self-link" href="#boolean"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#boolean">boolean</a></span><a class="self-link" href="#heading-boolean"></a></h3>
+    <h3 class="heading settled" data-level="3.5" id="heading-date"><span class="secno">3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="date">date<a class="self-link" href="#date"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#date">date</a></span><a class="self-link" href="#heading-date"></a></h3>
+    <h3 class="heading settled" data-level="3.6" id="heading-dateTime"><span class="secno">3.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="datetime">dateTime<a class="self-link" href="#datetime"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#dateTime">dateTime</a></span><a class="self-link" href="#heading-dateTime"></a></h3>
+    <h3 class="heading settled" data-level="3.7" id="heading-dateTimeStamp"><span class="secno">3.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="datetimestamp">dateTimeStamp<a class="self-link" href="#datetimestamp"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#dateTimeStamp">dateTimeStamp</a></span><a class="self-link" href="#heading-dateTimeStamp"></a></h3>
+    <h3 class="heading settled" data-level="3.8" id="heading-decimal"><span class="secno">3.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="decimal">decimal<a class="self-link" href="#decimal"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#decimal">decimal</a></span><a class="self-link" href="#heading-decimal"></a></h3>
+    <h3 class="heading settled" data-level="3.9" id="heading-string"><span class="secno">3.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="string">string<a class="self-link" href="#string"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#string">string</a></span><a class="self-link" href="#heading-string"></a></h3>
+    <h3 class="heading settled" data-level="3.10" id="heading-byte"><span class="secno">3.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="byte">byte<a class="self-link" href="#byte"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#byte">byte</a></span><a class="self-link" href="#heading-byte"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#short" id="ref-for-short">short</a></p>
-    <h3 class="heading settled" data-level="3.11" id="heading-int"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="int">int<a class="self-link" href="#int"></a></dfn></span><a class="self-link" href="#heading-int"></a></h3>
+    <h3 class="heading settled" data-level="3.11" id="heading-int"><span class="secno">3.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="int">int<a class="self-link" href="#int"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#int">int</a></span><a class="self-link" href="#heading-int"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#long" id="ref-for-long">long</a></p>
     <p><em>Sub terms:</em> <a data-link-type="dfn" href="XMLSchema.html#short" id="ref-for-short①">short</a></p>
-    <h3 class="heading settled" data-level="3.12" id="heading-long"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="long">long<a class="self-link" href="#long"></a></dfn></span><a class="self-link" href="#heading-long"></a></h3>
-    <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#integer" id="ref-for-integer①">integer</a></p>
+    <h3 class="heading settled" data-level="3.12" id="heading-long"><span class="secno">3.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="long">long<a class="self-link" href="#long"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#long">long</a></span><a class="self-link" href="#heading-long"></a></h3>
+    <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#integer" id="ref-for-integer">integer</a></p>
     <p><em>Sub terms:</em> <a data-link-type="dfn" href="XMLSchema.html#int" id="ref-for-int">int</a></p>
-    <h3 class="heading settled" data-level="3.13" id="heading-negativeInteger"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="negativeinteger">negativeInteger<a class="self-link" href="#negativeinteger"></a></dfn></span><a class="self-link" href="#heading-negativeInteger"></a></h3>
+    <h3 class="heading settled" data-level="3.13" id="heading-negativeInteger"><span class="secno">3.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="negativeinteger">negativeInteger<a class="self-link" href="#negativeinteger"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#negativeInteger">negativeInteger</a></span><a class="self-link" href="#heading-negativeInteger"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#nonpositiveinteger" id="ref-for-nonpositiveinteger">nonPositiveInteger</a></p>
-    <h3 class="heading settled" data-level="3.14" id="heading-nonNegativeInteger"><span class="secno">3.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="nonnegativeinteger">nonNegativeInteger<a class="self-link" href="#nonnegativeinteger"></a></dfn></span><a class="self-link" href="#heading-nonNegativeInteger"></a></h3>
-    <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#integer" id="ref-for-integer②">integer</a></p>
+    <h3 class="heading settled" data-level="3.14" id="heading-nonNegativeInteger"><span class="secno">3.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="nonnegativeinteger">nonNegativeInteger<a class="self-link" href="#nonnegativeinteger"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#nonNegativeInteger">nonNegativeInteger</a></span><a class="self-link" href="#heading-nonNegativeInteger"></a></h3>
+    <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#integer" id="ref-for-integer①">integer</a></p>
     <p><em>Sub terms:</em> <a data-link-type="dfn" href="XMLSchema.html#positiveinteger" id="ref-for-positiveinteger">positiveInteger</a>, <a data-link-type="dfn" href="XMLSchema.html#unsignedlong" id="ref-for-unsignedlong">unsignedLong</a></p>
-    <h3 class="heading settled" data-level="3.15" id="heading-nonPositiveInteger"><span class="secno">3.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="nonpositiveinteger">nonPositiveInteger<a class="self-link" href="#nonpositiveinteger"></a></dfn></span><a class="self-link" href="#heading-nonPositiveInteger"></a></h3>
-    <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#integer" id="ref-for-integer③">integer</a></p>
+    <h3 class="heading settled" data-level="3.15" id="heading-nonPositiveInteger"><span class="secno">3.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="nonpositiveinteger">nonPositiveInteger<a class="self-link" href="#nonpositiveinteger"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#nonPositiveInteger">nonPositiveInteger</a></span><a class="self-link" href="#heading-nonPositiveInteger"></a></h3>
+    <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#integer" id="ref-for-integer②">integer</a></p>
     <p><em>Sub terms:</em> <a data-link-type="dfn" href="XMLSchema.html#negativeinteger" id="ref-for-negativeinteger">negativeInteger</a></p>
-    <h3 class="heading settled" data-level="3.16" id="heading-positiveInteger"><span class="secno">3.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="positiveinteger">positiveInteger<a class="self-link" href="#positiveinteger"></a></dfn></span><a class="self-link" href="#heading-positiveInteger"></a></h3>
+    <h3 class="heading settled" data-level="3.16" id="heading-positiveInteger"><span class="secno">3.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="positiveinteger">positiveInteger<a class="self-link" href="#positiveinteger"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#positiveInteger">positiveInteger</a></span><a class="self-link" href="#heading-positiveInteger"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#nonnegativeinteger" id="ref-for-nonnegativeinteger">nonNegativeInteger</a></p>
-    <h3 class="heading settled" data-level="3.17" id="heading-short"><span class="secno">3.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="short">short<a class="self-link" href="#short"></a></dfn></span><a class="self-link" href="#heading-short"></a></h3>
+    <h3 class="heading settled" data-level="3.17" id="heading-short"><span class="secno">3.17. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="short">short<a class="self-link" href="#short"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#short">short</a></span><a class="self-link" href="#heading-short"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#int" id="ref-for-int①">int</a></p>
     <p><em>Sub terms:</em> <a data-link-type="dfn" href="XMLSchema.html#byte" id="ref-for-byte">byte</a></p>
-    <h3 class="heading settled" data-level="3.18" id="heading-unsignedByte"><span class="secno">3.18. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unsignedbyte">unsignedByte<a class="self-link" href="#unsignedbyte"></a></dfn></span><a class="self-link" href="#heading-unsignedByte"></a></h3>
+    <h3 class="heading settled" data-level="3.18" id="heading-unsignedByte"><span class="secno">3.18. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unsignedbyte">unsignedByte<a class="self-link" href="#unsignedbyte"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#unsignedByte">unsignedByte</a></span><a class="self-link" href="#heading-unsignedByte"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#unsignedshort" id="ref-for-unsignedshort">unsignedShort</a></p>
-    <h3 class="heading settled" data-level="3.19" id="heading-unsignedInt"><span class="secno">3.19. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unsignedint">unsignedInt<a class="self-link" href="#unsignedint"></a></dfn></span><a class="self-link" href="#heading-unsignedInt"></a></h3>
+    <h3 class="heading settled" data-level="3.19" id="heading-unsignedInt"><span class="secno">3.19. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unsignedint">unsignedInt<a class="self-link" href="#unsignedint"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#unsignedInt">unsignedInt</a></span><a class="self-link" href="#heading-unsignedInt"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#unsignedlong" id="ref-for-unsignedlong①">unsignedLong</a></p>
     <p><em>Sub terms:</em> <a data-link-type="dfn" href="XMLSchema.html#unsignedshort" id="ref-for-unsignedshort①">unsignedShort</a></p>
-    <h3 class="heading settled" data-level="3.20" id="heading-unsignedLong"><span class="secno">3.20. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unsignedlong">unsignedLong<a class="self-link" href="#unsignedlong"></a></dfn></span><a class="self-link" href="#heading-unsignedLong"></a></h3>
+    <h3 class="heading settled" data-level="3.20" id="heading-unsignedLong"><span class="secno">3.20. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unsignedlong">unsignedLong<a class="self-link" href="#unsignedlong"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#unsignedLong">unsignedLong</a></span><a class="self-link" href="#heading-unsignedLong"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#nonnegativeinteger" id="ref-for-nonnegativeinteger①">nonNegativeInteger</a></p>
     <p><em>Sub terms:</em> <a data-link-type="dfn" href="XMLSchema.html#unsignedint" id="ref-for-unsignedint">unsignedInt</a></p>
-    <h3 class="heading settled" data-level="3.21" id="heading-unsignedShort"><span class="secno">3.21. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unsignedshort">unsignedShort<a class="self-link" href="#unsignedshort"></a></dfn></span><a class="self-link" href="#heading-unsignedShort"></a></h3>
+    <h3 class="heading settled" data-level="3.21" id="heading-unsignedShort"><span class="secno">3.21. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="unsignedshort">unsignedShort<a class="self-link" href="#unsignedshort"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#unsignedShort">unsignedShort</a></span><a class="self-link" href="#heading-unsignedShort"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#unsignedint" id="ref-for-unsignedint①">unsignedInt</a></p>
     <p><em>Sub terms:</em> <a data-link-type="dfn" href="XMLSchema.html#unsignedbyte" id="ref-for-unsignedbyte">unsignedByte</a></p>
-    <h3 class="heading settled" data-level="3.22" id="heading-NCName"><span class="secno">3.22. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ncname">NCName<a class="self-link" href="#ncname"></a></dfn></span><a class="self-link" href="#heading-NCName"></a></h3>
+    <h3 class="heading settled" data-level="3.22" id="heading-NCName"><span class="secno">3.22. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ncname">NCName<a class="self-link" href="#ncname"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#NCName">NCName</a></span><a class="self-link" href="#heading-NCName"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#name" id="ref-for-name">name</a></p>
-    <h3 class="heading settled" data-level="3.23" id="heading-NMTOKEN"><span class="secno">3.23. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="nmtoken">NMTOKEN<a class="self-link" href="#nmtoken"></a></dfn></span><a class="self-link" href="#heading-NMTOKEN"></a></h3>
+    <h3 class="heading settled" data-level="3.23" id="heading-NMTOKEN"><span class="secno">3.23. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="nmtoken">NMTOKEN<a class="self-link" href="#nmtoken"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#NMTOKEN">NMTOKEN</a></span><a class="self-link" href="#heading-NMTOKEN"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#token" id="ref-for-token">token</a></p>
-    <h3 class="heading settled" data-level="3.24" id="heading-dayTimeDuration"><span class="secno">3.24. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="daytimeduration">dayTimeDuration<a class="self-link" href="#daytimeduration"></a></dfn></span><a class="self-link" href="#heading-dayTimeDuration"></a></h3>
-    <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#duration" id="ref-for-duration①">duration</a></p>
-    <h3 class="heading settled" data-level="3.25" id="heading-double"><span class="secno">3.25. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="double">double<a class="self-link" href="#double"></a></dfn></span><a class="self-link" href="#heading-double"></a></h3>
+    <h3 class="heading settled" data-level="3.24" id="heading-dayTimeDuration"><span class="secno">3.24. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="daytimeduration">dayTimeDuration<a class="self-link" href="#daytimeduration"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#dayTimeDuration">dayTimeDuration</a></span><a class="self-link" href="#heading-dayTimeDuration"></a></h3>
+    <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#duration" id="ref-for-duration">duration</a></p>
+    <h3 class="heading settled" data-level="3.25" id="heading-double"><span class="secno">3.25. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="double">double<a class="self-link" href="#double"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#double">double</a></span><a class="self-link" href="#heading-double"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#anyatomictype" id="ref-for-anyatomictype">anyAtomicType</a></p>
-    <h3 class="heading settled" data-level="3.26" id="heading-duration"><span class="secno">3.26. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="duration">duration<a class="self-link" href="#duration"></a></dfn></span><a class="self-link" href="#heading-duration"></a></h3>
+    <h3 class="heading settled" data-level="3.26" id="heading-duration"><span class="secno">3.26. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="duration">duration<a class="self-link" href="#duration"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#duration">duration</a></span><a class="self-link" href="#heading-duration"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#anyatomictype" id="ref-for-anyatomictype①">anyAtomicType</a></p>
     <p><em>Sub terms:</em> <a data-link-type="dfn" href="XMLSchema.html#daytimeduration" id="ref-for-daytimeduration">dayTimeDuration</a>, <a data-link-type="dfn" href="XMLSchema.html#yearmonthduration" id="ref-for-yearmonthduration">yearMonthDuration</a></p>
-    <h3 class="heading settled" data-level="3.27" id="heading-float"><span class="secno">3.27. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="float">float<a class="self-link" href="#float"></a></dfn></span><a class="self-link" href="#heading-float"></a></h3>
+    <h3 class="heading settled" data-level="3.27" id="heading-float"><span class="secno">3.27. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="float">float<a class="self-link" href="#float"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#float">float</a></span><a class="self-link" href="#heading-float"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#anyatomictype" id="ref-for-anyatomictype②">anyAtomicType</a></p>
-    <h3 class="heading settled" data-level="3.28" id="heading-gDay"><span class="secno">3.28. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gday">gDay<a class="self-link" href="#gday"></a></dfn></span><a class="self-link" href="#heading-gDay"></a></h3>
+    <h3 class="heading settled" data-level="3.28" id="heading-gDay"><span class="secno">3.28. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gday">gDay<a class="self-link" href="#gday"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#gDay">gDay</a></span><a class="self-link" href="#heading-gDay"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#anyatomictype" id="ref-for-anyatomictype③">anyAtomicType</a></p>
-    <h3 class="heading settled" data-level="3.29" id="heading-gMonth"><span class="secno">3.29. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gmonth">gMonth<a class="self-link" href="#gmonth"></a></dfn></span><a class="self-link" href="#heading-gMonth"></a></h3>
+    <h3 class="heading settled" data-level="3.29" id="heading-gMonth"><span class="secno">3.29. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gmonth">gMonth<a class="self-link" href="#gmonth"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#gMonth">gMonth</a></span><a class="self-link" href="#heading-gMonth"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#anyatomictype" id="ref-for-anyatomictype④">anyAtomicType</a></p>
-    <h3 class="heading settled" data-level="3.30" id="heading-gMonthDay"><span class="secno">3.30. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gmonthday">gMonthDay<a class="self-link" href="#gmonthday"></a></dfn></span><a class="self-link" href="#heading-gMonthDay"></a></h3>
+    <h3 class="heading settled" data-level="3.30" id="heading-gMonthDay"><span class="secno">3.30. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gmonthday">gMonthDay<a class="self-link" href="#gmonthday"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#gMonthDay">gMonthDay</a></span><a class="self-link" href="#heading-gMonthDay"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#anyatomictype" id="ref-for-anyatomictype⑤">anyAtomicType</a></p>
-    <h3 class="heading settled" data-level="3.31" id="heading-gYear"><span class="secno">3.31. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gyear">gYear<a class="self-link" href="#gyear"></a></dfn></span><a class="self-link" href="#heading-gYear"></a></h3>
+    <h3 class="heading settled" data-level="3.31" id="heading-gYear"><span class="secno">3.31. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gyear">gYear<a class="self-link" href="#gyear"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#gYear">gYear</a></span><a class="self-link" href="#heading-gYear"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#anyatomictype" id="ref-for-anyatomictype⑥">anyAtomicType</a></p>
-    <h3 class="heading settled" data-level="3.32" id="heading-gYearMonth"><span class="secno">3.32. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gyearmonth">gYearMonth<a class="self-link" href="#gyearmonth"></a></dfn></span><a class="self-link" href="#heading-gYearMonth"></a></h3>
+    <h3 class="heading settled" data-level="3.32" id="heading-gYearMonth"><span class="secno">3.32. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="gyearmonth">gYearMonth<a class="self-link" href="#gyearmonth"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#gYearMonth">gYearMonth</a></span><a class="self-link" href="#heading-gYearMonth"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#anyatomictype" id="ref-for-anyatomictype⑦">anyAtomicType</a></p>
-    <h3 class="heading settled" data-level="3.33" id="heading-hexBinary"><span class="secno">3.33. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hexbinary">hexBinary<a class="self-link" href="#hexbinary"></a></dfn></span><a class="self-link" href="#heading-hexBinary"></a></h3>
+    <h3 class="heading settled" data-level="3.33" id="heading-hexBinary"><span class="secno">3.33. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hexbinary">hexBinary<a class="self-link" href="#hexbinary"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#hexBinary">hexBinary</a></span><a class="self-link" href="#heading-hexBinary"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#anyatomictype" id="ref-for-anyatomictype⑧">anyAtomicType</a></p>
-    <h3 class="heading settled" data-level="3.34" id="heading-integer"><span class="secno">3.34. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="integer">integer<a class="self-link" href="#integer"></a></dfn></span><a class="self-link" href="#heading-integer"></a></h3>
+    <h3 class="heading settled" data-level="3.34" id="heading-integer"><span class="secno">3.34. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="integer">integer<a class="self-link" href="#integer"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#integer">integer</a></span><a class="self-link" href="#heading-integer"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#decimal" id="ref-for-decimal">decimal</a></p>
     <p><em>Sub terms:</em> <a data-link-type="dfn" href="XMLSchema.html#long" id="ref-for-long①">long</a>, <a data-link-type="dfn" href="XMLSchema.html#nonnegativeinteger" id="ref-for-nonnegativeinteger②">nonNegativeInteger</a>, <a data-link-type="dfn" href="XMLSchema.html#nonpositiveinteger" id="ref-for-nonpositiveinteger①">nonPositiveInteger</a></p>
-    <h3 class="heading settled" data-level="3.35" id="heading-language"><span class="secno">3.35. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="language">language<a class="self-link" href="#language"></a></dfn></span><a class="self-link" href="#heading-language"></a></h3>
+    <h3 class="heading settled" data-level="3.35" id="heading-language"><span class="secno">3.35. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="language">language<a class="self-link" href="#language"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#language">language</a></span><a class="self-link" href="#heading-language"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#token" id="ref-for-token①">token</a></p>
-    <h3 class="heading settled" data-level="3.36" id="heading-name"><span class="secno">3.36. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="name">name<a class="self-link" href="#name"></a></dfn></span><a class="self-link" href="#heading-name"></a></h3>
+    <h3 class="heading settled" data-level="3.36" id="heading-name"><span class="secno">3.36. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="name">name<a class="self-link" href="#name"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#name">name</a></span><a class="self-link" href="#heading-name"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#token" id="ref-for-token②">token</a></p>
     <p><em>Sub terms:</em> <a data-link-type="dfn" href="XMLSchema.html#ncname" id="ref-for-ncname">NCName</a></p>
-    <h3 class="heading settled" data-level="3.37" id="heading-normalizedString"><span class="secno">3.37. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="normalizedstring">normalizedString<a class="self-link" href="#normalizedstring"></a></dfn></span><a class="self-link" href="#heading-normalizedString"></a></h3>
+    <h3 class="heading settled" data-level="3.37" id="heading-normalizedString"><span class="secno">3.37. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="normalizedstring">normalizedString<a class="self-link" href="#normalizedstring"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#normalizedString">normalizedString</a></span><a class="self-link" href="#heading-normalizedString"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#string" id="ref-for-string">string</a></p>
     <p><em>Sub terms:</em> <a data-link-type="dfn" href="XMLSchema.html#token" id="ref-for-token③">token</a></p>
-    <h3 class="heading settled" data-level="3.38" id="heading-time"><span class="secno">3.38. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="time">time<a class="self-link" href="#time"></a></dfn></span><a class="self-link" href="#heading-time"></a></h3>
+    <h3 class="heading settled" data-level="3.38" id="heading-time"><span class="secno">3.38. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="time">time<a class="self-link" href="#time"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#time">time</a></span><a class="self-link" href="#heading-time"></a></h3>
     <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#anyatomictype" id="ref-for-anyatomictype⑨">anyAtomicType</a></p>
-    <h3 class="heading settled" data-level="3.39" id="heading-token"><span class="secno">3.39. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="token">token<a class="self-link" href="#token"></a></dfn></span><a class="self-link" href="#heading-token"></a></h3>
-    <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#normalizedstring" id="ref-for-normalizedstring①">normalizedString</a></p>
+    <h3 class="heading settled" data-level="3.39" id="heading-token"><span class="secno">3.39. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="token">token<a class="self-link" href="#token"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#token">token</a></span><a class="self-link" href="#heading-token"></a></h3>
+    <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#normalizedstring" id="ref-for-normalizedstring">normalizedString</a></p>
     <p><em>Sub terms:</em> <a data-link-type="dfn" href="XMLSchema.html#nmtoken" id="ref-for-nmtoken">NMTOKEN</a>, <a data-link-type="dfn" href="XMLSchema.html#language" id="ref-for-language">language</a>, <a data-link-type="dfn" href="XMLSchema.html#name" id="ref-for-name①">name</a></p>
-    <h3 class="heading settled" data-level="3.40" id="heading-yearMonthDuration"><span class="secno">3.40. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="yearmonthduration">yearMonthDuration<a class="self-link" href="#yearmonthduration"></a></dfn></span><a class="self-link" href="#heading-yearMonthDuration"></a></h3>
-    <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#duration" id="ref-for-duration②">duration</a></p>
+    <h3 class="heading settled" data-level="3.40" id="heading-yearMonthDuration"><span class="secno">3.40. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="yearmonthduration">yearMonthDuration<a class="self-link" href="#yearmonthduration"></a></dfn> see <a href="https://www.w3.org/TR/xmlschema11-2#yearMonthDuration">yearMonthDuration</a></span><a class="self-link" href="#heading-yearMonthDuration"></a></h3>
+    <p><em>Super terms:</em> <a data-link-type="dfn" href="XMLSchema.html#duration" id="ref-for-duration①">duration</a></p>
    </div>
   </main>
 <script>
@@ -1755,239 +1759,176 @@ pre .property::before, pre .property::after {
   <aside class="dfn-panel" data-for="term-for-anyatomictype">
    <a href="XMLSchema.html#anyatomictype">XMLSchema.html#anyatomictype</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-anyatomictype">3.25. double</a>
-    <li><a href="#ref-for-anyatomictype①">3.26. duration</a>
-    <li><a href="#ref-for-anyatomictype②">3.27. float</a>
-    <li><a href="#ref-for-anyatomictype③">3.28. gDay</a>
-    <li><a href="#ref-for-anyatomictype④">3.29. gMonth</a>
-    <li><a href="#ref-for-anyatomictype⑤">3.30. gMonthDay</a>
-    <li><a href="#ref-for-anyatomictype⑥">3.31. gYear</a>
-    <li><a href="#ref-for-anyatomictype⑦">3.32. gYearMonth</a>
-    <li><a href="#ref-for-anyatomictype⑧">3.33. hexBinary</a>
-    <li><a href="#ref-for-anyatomictype⑨">3.38. time</a>
+    <li><a href="#ref-for-anyatomictype">3.25. double see double</a>
+    <li><a href="#ref-for-anyatomictype①">3.26. duration see duration</a>
+    <li><a href="#ref-for-anyatomictype②">3.27. float see float</a>
+    <li><a href="#ref-for-anyatomictype③">3.28. gDay see gDay</a>
+    <li><a href="#ref-for-anyatomictype④">3.29. gMonth see gMonth</a>
+    <li><a href="#ref-for-anyatomictype⑤">3.30. gMonthDay see gMonthDay</a>
+    <li><a href="#ref-for-anyatomictype⑥">3.31. gYear see gYear</a>
+    <li><a href="#ref-for-anyatomictype⑦">3.32. gYearMonth see gYearMonth</a>
+    <li><a href="#ref-for-anyatomictype⑧">3.33. hexBinary see hexBinary</a>
+    <li><a href="#ref-for-anyatomictype⑨">3.38. time see time</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-byte">
    <a href="XMLSchema.html#byte">XMLSchema.html#byte</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-byte">3.17. short</a>
+    <li><a href="#ref-for-byte">3.17. short see short</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-daytimeduration">
    <a href="XMLSchema.html#daytimeduration">XMLSchema.html#daytimeduration</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-daytimeduration">3.26. duration</a>
+    <li><a href="#ref-for-daytimeduration">3.26. duration see duration</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-decimal">
    <a href="XMLSchema.html#decimal">XMLSchema.html#decimal</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-decimal">3.34. integer</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-double">
-   <a href="XMLSchema.html#double">XMLSchema.html#double</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-double">3.1. anyAtomicType</a>
+    <li><a href="#ref-for-decimal">3.34. integer see integer</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-duration">
    <a href="XMLSchema.html#duration">XMLSchema.html#duration</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-duration">3.1. anyAtomicType</a>
-    <li><a href="#ref-for-duration①">3.24. dayTimeDuration</a>
-    <li><a href="#ref-for-duration②">3.40. yearMonthDuration</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-float">
-   <a href="XMLSchema.html#float">XMLSchema.html#float</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-float">3.1. anyAtomicType</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-gday">
-   <a href="XMLSchema.html#gday">XMLSchema.html#gday</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-gday">3.1. anyAtomicType</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-gmonth">
-   <a href="XMLSchema.html#gmonth">XMLSchema.html#gmonth</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-gmonth">3.1. anyAtomicType</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-gmonthday">
-   <a href="XMLSchema.html#gmonthday">XMLSchema.html#gmonthday</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-gmonthday">3.1. anyAtomicType</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-gyear">
-   <a href="XMLSchema.html#gyear">XMLSchema.html#gyear</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-gyear">3.1. anyAtomicType</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-gyearmonth">
-   <a href="XMLSchema.html#gyearmonth">XMLSchema.html#gyearmonth</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-gyearmonth">3.1. anyAtomicType</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-hexbinary">
-   <a href="XMLSchema.html#hexbinary">XMLSchema.html#hexbinary</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-hexbinary">3.1. anyAtomicType</a>
+    <li><a href="#ref-for-duration">3.24. dayTimeDuration see dayTimeDuration</a>
+    <li><a href="#ref-for-duration①">3.40. yearMonthDuration see yearMonthDuration</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-int">
    <a href="XMLSchema.html#int">XMLSchema.html#int</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-int">3.12. long</a>
-    <li><a href="#ref-for-int①">3.17. short</a>
+    <li><a href="#ref-for-int">3.12. long see long</a>
+    <li><a href="#ref-for-int①">3.17. short see short</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-integer">
    <a href="XMLSchema.html#integer">XMLSchema.html#integer</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-integer">3.8. decimal</a>
-    <li><a href="#ref-for-integer①">3.12. long</a>
-    <li><a href="#ref-for-integer②">3.14. nonNegativeInteger</a>
-    <li><a href="#ref-for-integer③">3.15. nonPositiveInteger</a>
+    <li><a href="#ref-for-integer">3.12. long see long</a>
+    <li><a href="#ref-for-integer①">3.14. nonNegativeInteger see nonNegativeInteger</a>
+    <li><a href="#ref-for-integer②">3.15. nonPositiveInteger see nonPositiveInteger</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-language">
    <a href="XMLSchema.html#language">XMLSchema.html#language</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-language">3.39. token</a>
+    <li><a href="#ref-for-language">3.39. token see token</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-long">
    <a href="XMLSchema.html#long">XMLSchema.html#long</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-long">3.11. int</a>
-    <li><a href="#ref-for-long①">3.34. integer</a>
+    <li><a href="#ref-for-long">3.11. int see int</a>
+    <li><a href="#ref-for-long①">3.34. integer see integer</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-name">
    <a href="XMLSchema.html#name">XMLSchema.html#name</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-name">3.22. NCName</a>
-    <li><a href="#ref-for-name①">3.39. token</a>
+    <li><a href="#ref-for-name">3.22. NCName see NCName</a>
+    <li><a href="#ref-for-name①">3.39. token see token</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-ncname">
    <a href="XMLSchema.html#ncname">XMLSchema.html#ncname</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-ncname">3.36. name</a>
+    <li><a href="#ref-for-ncname">3.36. name see name</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-negativeinteger">
    <a href="XMLSchema.html#negativeinteger">XMLSchema.html#negativeinteger</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-negativeinteger">3.15. nonPositiveInteger</a>
+    <li><a href="#ref-for-negativeinteger">3.15. nonPositiveInteger see nonPositiveInteger</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-nmtoken">
    <a href="XMLSchema.html#nmtoken">XMLSchema.html#nmtoken</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-nmtoken">3.39. token</a>
+    <li><a href="#ref-for-nmtoken">3.39. token see token</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-nonnegativeinteger">
    <a href="XMLSchema.html#nonnegativeinteger">XMLSchema.html#nonnegativeinteger</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-nonnegativeinteger">3.16. positiveInteger</a>
-    <li><a href="#ref-for-nonnegativeinteger①">3.20. unsignedLong</a>
-    <li><a href="#ref-for-nonnegativeinteger②">3.34. integer</a>
+    <li><a href="#ref-for-nonnegativeinteger">3.16. positiveInteger see positiveInteger</a>
+    <li><a href="#ref-for-nonnegativeinteger①">3.20. unsignedLong see unsignedLong</a>
+    <li><a href="#ref-for-nonnegativeinteger②">3.34. integer see integer</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-nonpositiveinteger">
    <a href="XMLSchema.html#nonpositiveinteger">XMLSchema.html#nonpositiveinteger</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-nonpositiveinteger">3.13. negativeInteger</a>
-    <li><a href="#ref-for-nonpositiveinteger①">3.34. integer</a>
+    <li><a href="#ref-for-nonpositiveinteger">3.13. negativeInteger see negativeInteger</a>
+    <li><a href="#ref-for-nonpositiveinteger①">3.34. integer see integer</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-normalizedstring">
    <a href="XMLSchema.html#normalizedstring">XMLSchema.html#normalizedstring</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-normalizedstring">3.9. string</a>
-    <li><a href="#ref-for-normalizedstring①">3.39. token</a>
+    <li><a href="#ref-for-normalizedstring">3.39. token see token</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-positiveinteger">
    <a href="XMLSchema.html#positiveinteger">XMLSchema.html#positiveinteger</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-positiveinteger">3.14. nonNegativeInteger</a>
+    <li><a href="#ref-for-positiveinteger">3.14. nonNegativeInteger see nonNegativeInteger</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-short">
    <a href="XMLSchema.html#short">XMLSchema.html#short</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-short">3.10. byte</a>
-    <li><a href="#ref-for-short①">3.11. int</a>
+    <li><a href="#ref-for-short">3.10. byte see byte</a>
+    <li><a href="#ref-for-short①">3.11. int see int</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-string">
    <a href="XMLSchema.html#string">XMLSchema.html#string</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-string">3.37. normalizedString</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-time">
-   <a href="XMLSchema.html#time">XMLSchema.html#time</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-time">3.1. anyAtomicType</a>
+    <li><a href="#ref-for-string">3.37. normalizedString see normalizedString</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-token">
    <a href="XMLSchema.html#token">XMLSchema.html#token</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-token">3.23. NMTOKEN</a>
-    <li><a href="#ref-for-token①">3.35. language</a>
-    <li><a href="#ref-for-token②">3.36. name</a>
-    <li><a href="#ref-for-token③">3.37. normalizedString</a>
+    <li><a href="#ref-for-token">3.23. NMTOKEN see NMTOKEN</a>
+    <li><a href="#ref-for-token①">3.35. language see language</a>
+    <li><a href="#ref-for-token②">3.36. name see name</a>
+    <li><a href="#ref-for-token③">3.37. normalizedString see normalizedString</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-unsignedbyte">
    <a href="XMLSchema.html#unsignedbyte">XMLSchema.html#unsignedbyte</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unsignedbyte">3.21. unsignedShort</a>
+    <li><a href="#ref-for-unsignedbyte">3.21. unsignedShort see unsignedShort</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-unsignedint">
    <a href="XMLSchema.html#unsignedint">XMLSchema.html#unsignedint</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unsignedint">3.20. unsignedLong</a>
-    <li><a href="#ref-for-unsignedint①">3.21. unsignedShort</a>
+    <li><a href="#ref-for-unsignedint">3.20. unsignedLong see unsignedLong</a>
+    <li><a href="#ref-for-unsignedint①">3.21. unsignedShort see unsignedShort</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-unsignedlong">
    <a href="XMLSchema.html#unsignedlong">XMLSchema.html#unsignedlong</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unsignedlong">3.14. nonNegativeInteger</a>
-    <li><a href="#ref-for-unsignedlong①">3.19. unsignedInt</a>
+    <li><a href="#ref-for-unsignedlong">3.14. nonNegativeInteger see nonNegativeInteger</a>
+    <li><a href="#ref-for-unsignedlong①">3.19. unsignedInt see unsignedInt</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-unsignedshort">
    <a href="XMLSchema.html#unsignedshort">XMLSchema.html#unsignedshort</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-unsignedshort">3.18. unsignedByte</a>
-    <li><a href="#ref-for-unsignedshort①">3.19. unsignedInt</a>
+    <li><a href="#ref-for-unsignedshort">3.18. unsignedByte see unsignedByte</a>
+    <li><a href="#ref-for-unsignedshort①">3.19. unsignedInt see unsignedInt</a>
    </ul>
   </aside>
   <aside class="dfn-panel" data-for="term-for-yearmonthduration">
    <a href="XMLSchema.html#yearmonthduration">XMLSchema.html#yearmonthduration</a><b>Referenced in:</b>
    <ul>
-    <li><a href="#ref-for-yearmonthduration">3.26. duration</a>
-   </ul>
-  </aside>
-  <aside class="dfn-panel" data-for="term-for-real">
-   <a href="../2002/07/owl.html#real">../2002/07/owl.html#real</a><b>Referenced in:</b>
-   <ul>
-    <li><a href="#ref-for-real">3.1. anyAtomicType</a>
+    <li><a href="#ref-for-yearmonthduration">3.26. duration see duration</a>
    </ul>
   </aside>
   <h3 class="no-num no-ref heading settled" id="index-defined-elsewhere"><span class="content">Terms defined by reference</span><a class="self-link" href="#index-defined-elsewhere"></a></h3>
@@ -1999,15 +1940,7 @@ pre .property::before, pre .property::after {
      <li><span class="dfn-paneled" id="term-for-byte" style="color:initial">byte</span>
      <li><span class="dfn-paneled" id="term-for-daytimeduration" style="color:initial">daytimeduration</span>
      <li><span class="dfn-paneled" id="term-for-decimal" style="color:initial">decimal</span>
-     <li><span class="dfn-paneled" id="term-for-double" style="color:initial">double</span>
      <li><span class="dfn-paneled" id="term-for-duration" style="color:initial">duration</span>
-     <li><span class="dfn-paneled" id="term-for-float" style="color:initial">float</span>
-     <li><span class="dfn-paneled" id="term-for-gday" style="color:initial">gday</span>
-     <li><span class="dfn-paneled" id="term-for-gmonth" style="color:initial">gmonth</span>
-     <li><span class="dfn-paneled" id="term-for-gmonthday" style="color:initial">gmonthday</span>
-     <li><span class="dfn-paneled" id="term-for-gyear" style="color:initial">gyear</span>
-     <li><span class="dfn-paneled" id="term-for-gyearmonth" style="color:initial">gyearmonth</span>
-     <li><span class="dfn-paneled" id="term-for-hexbinary" style="color:initial">hexbinary</span>
      <li><span class="dfn-paneled" id="term-for-int" style="color:initial">int</span>
      <li><span class="dfn-paneled" id="term-for-integer" style="color:initial">integer</span>
      <li><span class="dfn-paneled" id="term-for-language" style="color:initial">language</span>
@@ -2022,18 +1955,12 @@ pre .property::before, pre .property::after {
      <li><span class="dfn-paneled" id="term-for-positiveinteger" style="color:initial">positiveinteger</span>
      <li><span class="dfn-paneled" id="term-for-short" style="color:initial">short</span>
      <li><span class="dfn-paneled" id="term-for-string" style="color:initial">string</span>
-     <li><span class="dfn-paneled" id="term-for-time" style="color:initial">time</span>
      <li><span class="dfn-paneled" id="term-for-token" style="color:initial">token</span>
      <li><span class="dfn-paneled" id="term-for-unsignedbyte" style="color:initial">unsignedbyte</span>
      <li><span class="dfn-paneled" id="term-for-unsignedint" style="color:initial">unsignedint</span>
      <li><span class="dfn-paneled" id="term-for-unsignedlong" style="color:initial">unsignedlong</span>
      <li><span class="dfn-paneled" id="term-for-unsignedshort" style="color:initial">unsignedshort</span>
      <li><span class="dfn-paneled" id="term-for-yearmonthduration" style="color:initial">yearmonthduration</span>
-    </ul>
-   <li>
-    <a data-link-type="biblio">[http://www.w3.org/2002/07/owl#]</a> defines the following terms:
-    <ul>
-     <li><span class="dfn-paneled" id="term-for-real" style="color:initial">real</span>
     </ul>
   </ul>
 <script>/* script-dfn-panel */

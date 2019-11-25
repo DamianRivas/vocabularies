@@ -1,0 +1,51 @@
+<pre class='metadata'>
+Title: OML Vocabularies Index
+Shortname: Index
+Level: 1
+Status: LS-COMMIT
+ED: https://opencaesar.github.io/vocabularies/
+Repository: https://github.com/opencaesar/vocabularies
+Editor: Jet Propulsion Laboratory
+!Copyright: Copyright 2019, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.This software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
+Boilerplate: copyright no, conformance no
+Markup Shorthands: markdown yes
+Use Dfn Panels: yes
+Abstract: Documentation generated from OML ontologies
+</pre>
+
+
+# \[Analysis](./src/main/oml/opencaesar.io/foundation/analysis.html) # {#heading-analysis-1}
+The Analysis vocabulary defines general concepts and properties for analyses (e.g., trade studies, driving requirements analysis, etc.). It provides a basis for specialization by domain experts.		
+
+
+# \[Base](./src/main/oml/opencaesar.io/foundation/base.html) # {#heading-base-2}
+The Base vocabulary defines foundation concepts that are common to multiple specialized ontologies.		
+
+
+# \[Mission](./src/main/oml/opencaesar.io/foundation/mission.html) # {#heading-mission-3}
+The Mission vocabulary defines concepts and properties for describing missions in terms of their objectives, their constituent components, the functions those components perform, and the requirements that specify them.		
+
+
+# \[Project](./src/main/oml/opencaesar.io/foundation/project.html) # {#heading-project-4}
+The Project vocabulary defines concepts and properties for describing a project in terms of its stakeholders, concerns, work breakdown, and deliverables. It provides a basis for specialization by domain experts.		
+
+
+# \[DC](./src/main/oml/purl.org/dc/elements/1.1.html) # {#heading-dc-5}
+The DC vocabulary is a subset of the vocabulary maintained by the Dublin Core Metadata Initiative.		
+
+
+# \[RDF](./src/main/oml/www.w3.org/1999/02/22-rdf-syntax-ns.html) # {#heading-rdf-6}
+The RDF vocabulary is a subset of the vocabulary maintained by the W3C.		
+
+
+# \[RDFS](./src/main/oml/www.w3.org/2000/01/rdf-schema.html) # {#heading-rdfs-7}
+The RDFS vocabulary is a subset of the vocabulary maintained by the W3C.		
+
+
+# \[XSD](./src/main/oml/www.w3.org/2001/XMLSchema.html) # {#heading-xsd-8}
+The XSD vocabulary is a subset of the corresponding vocabulary maintained by the W3C.		
+
+
+# \[OWL2](./src/main/oml/www.w3.org/2002/07/owl.html) # {#heading-owl-9}
+The OWL2 vocabulary is a subset of the vocabulary maintained by the W3C.		
+

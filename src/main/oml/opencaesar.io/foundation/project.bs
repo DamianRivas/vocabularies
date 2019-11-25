@@ -1,0 +1,840 @@
+<pre class='metadata'>
+Title: Project
+Shortname: project
+Level: 1
+Status: LS-COMMIT
+ED: https://opencaesar.github.io/vocabularies//src/main/oml/opencaesar.io/foundation/project
+Repository: https://opencaesar.github.io/vocabularies/
+Editor: Jet Propulsion Laboratory
+!Copyright: Copyright 2010-2014, by the California Institute of Technology. ALL RIGHTS RESERVED. United States Government Sponsorship acknowledged. Any commercial use must be negotiated with the Office of Technology Transfer at the California Institute of Technology.\n\nThis software may be subject to U.S. export control laws. By accepting this software, the user agrees to comply with all applicable U.S. export laws and regulations. User has the responsibility to obtain export licenses, or other export authority as may be required before exporting such information to foreign countries or providing access to foreign persons.
+Boilerplate: copyright no, conformance no
+Markup Shorthands: markdown yes
+Use Dfn Panels: yes
+Abstract: The Project vocabulary defines concepts and properties for describing a project in terms of its stakeholders, concerns, work breakdown, and deliverables. It provides a basis for specialization by domain experts.
+</pre>
+<div export=true>
+# Namespace # {#heading-namespace}
+	* project: [http://opencaesar.io/foundation/project](project.html)
+# Extensions # {#heading-extensions}
+	* analysis: [http://opencaesar.io/foundation/analysis](analysis.html)
+
+# Aspects # {#heading-aspects}
+## <dfn>AssignedElement</dfn> ## {#heading-AssignedElement}
+An <classname>AssignedElement</classname> is any model element that can have the <property>isAssignedTo</property> relation with a <classname>Role</classname>.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/project" lt="Delivers">Delivers</a>, <a spec="http://opencaesar.io/foundation/project" lt="DevelopedElement">DevelopedElement</a>, <a spec="http://opencaesar.io/foundation/project" lt="Executes">Executes</a>, <a spec="http://opencaesar.io/foundation/project" lt="Process">Process</a>, <a spec="http://opencaesar.io/foundation/project" lt="Receives">Receives</a>, <a spec="http://opencaesar.io/foundation/project" lt="ReliesOn">ReliesOn</a>, <a spec="http://opencaesar.io/foundation/project" lt="Supplies">Supplies</a>
+
+
+*Relations having AssignedElement as range:*
+<a spec="http://opencaesar.io/foundation/project" lt="HasAssignment">HasAssignment</a>
+
+
+
+## <dfn>DevelopedElement</dfn> ## {#heading-DevelopedElement}
+A <classname>DevelopedElement</classname> is any model element that manifests <classname>DevelopmentState</classname>s. Example <classname>DevelopedElement</classname>s include spacecraft, thermal test facility, and requirements document.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/project" lt="AssignedElement">AssignedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/mission" lt="Component">mission:Component</a>, <a spec="http://opencaesar.io/foundation/project" lt="Facility">Facility</a>, <a spec="http://opencaesar.io/foundation/mission" lt="Interface">mission:Interface</a>, <a spec="http://opencaesar.io/foundation/mission" lt="Junction">mission:Junction</a>, <a spec="http://opencaesar.io/foundation/project" lt="Product">Product</a>
+
+*Relations having DevelopedElement as domain:*
+<a spec="http://opencaesar.io/foundation/project" lt="Manifests">Manifests</a>
+
+*Relations having DevelopedElement as range:*
+<a spec="http://opencaesar.io/foundation/project" lt="Describes">Describes</a>, <a spec="http://opencaesar.io/foundation/project" lt="ReliesOn">ReliesOn</a>
+
+
+
+## <dfn>RealizedElement</dfn> ## {#heading-RealizedElement}
+A <classname>RealizedElement</classname> is any element that <property>realizes</property> or <property>isRealizedBy</property> another element.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/mission" lt="Component">mission:Component</a>, <a spec="http://opencaesar.io/foundation/mission" lt="Function">mission:Function</a>, <a spec="http://opencaesar.io/foundation/mission" lt="Interface">mission:Interface</a>, <a spec="http://opencaesar.io/foundation/mission" lt="Junction">mission:Junction</a>, <a spec="http://opencaesar.io/foundation/mission" lt="Mission">mission:Mission</a>, <a spec="http://opencaesar.io/foundation/project" lt="Process">Process</a>, <a spec="http://opencaesar.io/foundation/project" lt="Project">Project</a>, <a spec="http://opencaesar.io/foundation/project" lt="WorkPackage">WorkPackage</a>
+
+*Relations having RealizedElement as domain:*
+<a spec="http://opencaesar.io/foundation/project" lt="Realizes">Realizes</a>
+
+*Relations having RealizedElement as range:*
+<a spec="http://opencaesar.io/foundation/project" lt="Realizes">Realizes</a>
+
+
+
+## <dfn>SuppliedElement</dfn> ## {#heading-SuppliedElement}
+A <classname>SuppliedElement</classname> is any model element that an <classname>Authority</classname> properly <property>supplies</property>. Example <classname>SuppliedElement</classname>s include <classname>Mission</classname> and <classname>Component</classname>.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/mission" lt="Component">mission:Component</a>, <a spec="http://opencaesar.io/foundation/mission" lt="Mission">mission:Mission</a>, <a spec="http://opencaesar.io/foundation/project" lt="Product">Product</a>
+
+
+*Relations having SuppliedElement as range:*
+<a spec="http://opencaesar.io/foundation/project" lt="Supplies">Supplies</a>
+
+
+
+# Concepts # {#heading-concepts}
+## <dfn>Authority</dfn> ## {#heading-Authority}
+An <classname>Authority</classname> is any entity that asserts a fact in a model. Example <classname>Authority</classname>s include\n<classname>Program</classname>,\n<classname>Project</classname>, and\n<classname>WorkPackage</classname>. (The association of an <classname>Authority</classname> with its asserted facts requires mechanisms outside the vocabulary of OWL itself, e.g., named graphs. For this reason, there is no object property <property>authorizes</property>. Authorization is conveyed by the organization of statements in a repository.)
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base" lt="Package">base:Package</a>
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/project" lt="Program">Program</a>, <a spec="http://opencaesar.io/foundation/project" lt="Project">Project</a>, <a spec="http://opencaesar.io/foundation/project" lt="WorkPackage">WorkPackage</a>
+
+*Relations having Authority as domain:*
+<a spec="http://opencaesar.io/foundation/project" lt="Authorizes">Authorizes</a>, <a spec="http://opencaesar.io/foundation/project" lt="Executes">Executes</a>, <a spec="http://opencaesar.io/foundation/project" lt="Produces">Produces</a>, <a spec="http://opencaesar.io/foundation/project" lt="ReliesOn">ReliesOn</a>, <a spec="http://opencaesar.io/foundation/project" lt="Supplies">Supplies</a>
+
+*Relations having Authority as range:*
+<a spec="http://opencaesar.io/foundation/project" lt="Authorizes">Authorizes</a>, <a spec="http://opencaesar.io/foundation/project" lt="HasResponsibilityFor">HasResponsibilityFor</a>
+
+
+
+## <dfn>Concern</dfn> ## {#heading-Concern}
+<para>A <classname>Concern</classname> represents a specific interest that one or more stakeholders have in the successful completion of a <classname>Project</classname> or <classname>Program</classname> and its <classname>Mission</classname>s. </para>
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base" lt="AggregatedElement">base:AggregatedElement</a>, <a spec="http://opencaesar.io/foundation/base" lt="IdentifiedElement">base:IdentifiedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="MeasuredElement">analysis:MeasuredElement</a>
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/mission" lt="Objective">mission:Objective</a>
+
+
+*Relations having Concern as range:*
+<a spec="http://opencaesar.io/foundation/project" lt="Represents">Represents</a>
+
+
+
+## <dfn>Deliverable</dfn> ## {#heading-Deliverable}
+A <classname>Deliverable</classname> is the result of successful execution of a <classname>Process</classname>. It may be an input to or prerequisite for another <classname>Process</classname>.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+*Sub entities:*
+<a spec="http://opencaesar.io/foundation/project" lt="DevelopmentState">DevelopmentState</a>
+
+
+*Relations having Deliverable as range:*
+<a spec="http://opencaesar.io/foundation/project" lt="Delivers">Delivers</a>, <a spec="http://opencaesar.io/foundation/project" lt="HasParticipant">HasParticipant</a>, <a spec="http://opencaesar.io/foundation/project" lt="Receives">Receives</a>
+
+*Properties:*
+<a spec="http://opencaesar.io/foundation/project" lt="isRequiredNotLaterThan">isRequiredNotLaterThan</a>
+
+
+## <dfn>DevelopmentState</dfn> ## {#heading-DevelopmentState}
+A <classname>DevelopmentState</classname> is a kind of\n<classname>Deliverable</classname> that represents a defined condition for a <classname>DevelopedElement</classname>. <classname>DevelopmentState</classname>s may be unique to the <classname>DevelopedElement</classname>; example <classname>DevelopmentState</classname>s for a <classname>Product</classname> include Preliminary, Draft, and Final.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="Characterization">analysis:Characterization</a>, <a spec="http://opencaesar.io/foundation/project" lt="Deliverable">Deliverable</a>
+
+
+*Relations having DevelopmentState as range:*
+<a spec="http://opencaesar.io/foundation/project" lt="Manifests">Manifests</a>
+
+
+
+## <dfn>Facility</dfn> ## {#heading-Facility}
+A <classname>Facility</classname> is any asset (e.g., laboratory, assembly facility, test facility, etc.) whose <classname>DevelopmentState</classname> may be a <classname>Deliverable</classname> for a project process.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/project" lt="DevelopedElement">DevelopedElement</a>, <a spec="http://opencaesar.io/foundation/base" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+
+
+
+
+## <dfn>Interchange</dfn> ## {#heading-Interchange}
+An <classname>Interchange</classname> represents the intended joint behavior of a pair of <classname>Process</classname>es. It indicates that a <classname>Deliverable</classname> may be delivered by one <classname>Process</classname> and received by the other <classname>Process</classname>.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+*Relations having Interchange as domain:*
+<a spec="http://opencaesar.io/foundation/project" lt="HasParticipant">HasParticipant</a>, <a spec="http://opencaesar.io/foundation/project" lt="Involves">Involves</a>, <a spec="http://opencaesar.io/foundation/project" lt="Involves1">Involves1</a>, <a spec="http://opencaesar.io/foundation/project" lt="Involves2">Involves2</a>
+
+
+
+
+## <dfn>InterchangePoint</dfn> ## {#heading-InterchangePoint}
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+*Relations having InterchangePoint as domain:*
+<a spec="http://opencaesar.io/foundation/project" lt="Delivers">Delivers</a>, <a spec="http://opencaesar.io/foundation/project" lt="Receives">Receives</a>
+
+*Relations having InterchangePoint as range:*
+<a spec="http://opencaesar.io/foundation/project" lt="InterchangesThrough">InterchangesThrough</a>
+
+
+
+## <dfn>Organization</dfn> ## {#heading-Organization}
+An <classname>Organization</classname> is any entity that <property>isResponsibleFor</property> a <classname>Authority</classname>.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+*Relations having Organization as domain:*
+<a spec="http://opencaesar.io/foundation/project" lt="HasResponsibilityFor">HasResponsibilityFor</a>
+
+*Relations having Organization as range:*
+<a spec="http://opencaesar.io/foundation/project" lt="BelongsTo">BelongsTo</a>
+
+
+
+## <dfn>Person</dfn> ## {#heading-Person}
+A <classname>Person</classname> corresponds to an individual named person. A <classname>Person</classname> <property>belongsTo</property> zero or more <classname>Organization</classname>s.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+*Relations having Person as domain:*
+<a spec="http://opencaesar.io/foundation/project" lt="BelongsTo">BelongsTo</a>, <a spec="http://opencaesar.io/foundation/project" lt="HasRole">HasRole</a>
+
+
+
+
+## <dfn>Policy</dfn> ## {#heading-Policy}
+A <classname>Policy</classname> represents a specific exercise of authority that <property>binds</property> one or more model elements.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+*Relations having Policy as domain:*
+<a spec="http://opencaesar.io/foundation/project" lt="Binds">Binds</a>
+
+
+
+
+## <dfn>Process</dfn> ## {#heading-Process}
+A <classname>Process</classname> is an activity authorized by a <classname>WorkPackage</classname> in support of delivering a <classname>Component</classname> or producing a <classname>Product</classname>. Examples include <emphasis>design trajectory</emphasis>, <emphasis>conduct trade study</emphasis>, and <emphasis>review subsystem design</emphasis>.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/project" lt="AssignedElement">AssignedElement</a>, <a spec="http://opencaesar.io/foundation/base" lt="IdentifiedElement">base:IdentifiedElement</a>, <a spec="http://opencaesar.io/foundation/project" lt="RealizedElement">RealizedElement</a>
+
+*Relations having Process as domain:*
+<a spec="http://opencaesar.io/foundation/project" lt="InterchangesThrough">InterchangesThrough</a>, <a spec="http://opencaesar.io/foundation/project" lt="Invokes">Invokes</a>
+
+*Relations having Process as range:*
+<a spec="http://opencaesar.io/foundation/project" lt="Executes">Executes</a>, <a spec="http://opencaesar.io/foundation/project" lt="Invokes">Invokes</a>, <a spec="http://opencaesar.io/foundation/project" lt="Involves">Involves</a>, <a spec="http://opencaesar.io/foundation/project" lt="Involves1">Involves1</a>, <a spec="http://opencaesar.io/foundation/project" lt="Involves2">Involves2</a>
+
+
+
+## <dfn>Product</dfn> ## {#heading-Product}
+A <classname>Product</classname> is a document or other artifact supplied by a <classname>WorkPackage</classname>. Example <classname>Product</classname>s include trade study reports, design documents, and inspection reports.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base" lt="AggregatedElement">base:AggregatedElement</a>, <a spec="http://opencaesar.io/foundation/project" lt="DevelopedElement">DevelopedElement</a>, <a spec="http://opencaesar.io/foundation/base" lt="IdentifiedElement">base:IdentifiedElement</a>, <a spec="http://opencaesar.io/foundation/project" lt="SuppliedElement">SuppliedElement</a>
+
+*Relations having Product as domain:*
+<a spec="http://opencaesar.io/foundation/project" lt="Describes">Describes</a>
+
+*Relations having Product as range:*
+<a spec="http://opencaesar.io/foundation/project" lt="Approves">Approves</a>, <a spec="http://opencaesar.io/foundation/project" lt="Concurs">Concurs</a>, <a spec="http://opencaesar.io/foundation/project" lt="Prepares">Prepares</a>, <a spec="http://opencaesar.io/foundation/project" lt="Produces">Produces</a>
+
+
+
+## <dfn>Program</dfn> ## {#heading-Program}
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/project" lt="Authority">Authority</a>
+
+
+
+
+
+## <dfn>Project</dfn> ## {#heading-Project}
+A <classname>Project</classname> is a kind of <classname>Authority</classname> that <property>supplies</property> a related set of <classname>Mission</classname>s in pursuit of a set of <classname>Objective</classname>s.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/project" lt="Authority">Authority</a>, <a spec="http://opencaesar.io/foundation/project" lt="RealizedElement">RealizedElement</a>
+
+
+
+
+
+## <dfn>Role</dfn> ## {#heading-Role}
+A <classname>Role</classname> corresponds to a set of assignments meant to be filled by a single <classname>Person</classname>.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+*Relations having Role as domain:*
+<a spec="http://opencaesar.io/foundation/project" lt="Approves">Approves</a>, <a spec="http://opencaesar.io/foundation/project" lt="Concurs">Concurs</a>, <a spec="http://opencaesar.io/foundation/project" lt="DelegatesTo">DelegatesTo</a>, <a spec="http://opencaesar.io/foundation/project" lt="HasAssignment">HasAssignment</a>, <a spec="http://opencaesar.io/foundation/project" lt="Prepares">Prepares</a>
+
+*Relations having Role as range:*
+<a spec="http://opencaesar.io/foundation/project" lt="DelegatesTo">DelegatesTo</a>, <a spec="http://opencaesar.io/foundation/project" lt="HasRole">HasRole</a>
+
+
+
+## <dfn>Stakeholder</dfn> ## {#heading-Stakeholder}
+A <classname>Stakeholder</classname> is a person or organization with a recognized interest in the successful completion of a <classname>Project</classname> or <classname>Program</classname>. Example <classname>Stakeholder</classname>s include scientists, NASA Directorates, nuclear safety advocates, and the general public.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/base" lt="IdentifiedElement">base:IdentifiedElement</a>
+
+*Relations having Stakeholder as domain:*
+<a spec="http://opencaesar.io/foundation/project" lt="Represents">Represents</a>
+
+
+
+
+## <dfn>WorkPackage</dfn> ## {#heading-WorkPackage}
+A <classname>WorkPackage</classname> represents a discrete unit of <classname>Project</classname> cost, schedule, and activity. <classname>WorkPackage</classname>s form a hierarchy called the Work Breakdown Structure.
+
+
+*Super entities:*
+<a spec="http://opencaesar.io/foundation/project" lt="Authority">Authority</a>, <a spec="http://opencaesar.io/foundation/base" lt="Package">base:Package</a>, <a spec="http://opencaesar.io/foundation/project" lt="RealizedElement">RealizedElement</a>
+
+
+
+
+
+# External Concepts # {#heading-external-concepts}
+## <a spec="http://opencaesar.io/foundation/mission" lt="Objective">mission:Objective</a> ## {#heading-mission:Objective}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/project">Concern</a>, <a spec="http://opencaesar.io/foundation/base">IdentifiedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission" lt="Component">mission:Component</a> ## {#heading-mission:Component}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/project">DevelopedElement</a>, <a spec="http://opencaesar.io/foundation/project">RealizedElement</a>, <a spec="http://opencaesar.io/foundation/project">SuppliedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission" lt="Function">mission:Function</a> ## {#heading-mission:Function}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/project">RealizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission" lt="Interface">mission:Interface</a> ## {#heading-mission:Interface}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/project">DevelopedElement</a>, <a spec="http://opencaesar.io/foundation/project">RealizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission" lt="Junction">mission:Junction</a> ## {#heading-mission:Junction}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/project">DevelopedElement</a>, <a spec="http://opencaesar.io/foundation/project">RealizedElement</a>
+
+
+## <a spec="http://opencaesar.io/foundation/mission" lt="Mission">mission:Mission</a> ## {#heading-mission:Mission}
+
+	*Super terms:*
+	<a spec="http://opencaesar.io/foundation/project">RealizedElement</a>, <a spec="http://opencaesar.io/foundation/project">SuppliedElement</a>
+
+
+# Relations # {#heading-relations}
+## <dfn>Approves</dfn> ## {#heading-Approves}
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Role">Role</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Product">Product</a>
+
+*Forward:*
+<dfn attribute for=Approves>approves</dfn>
+
+*Inverse:*
+<dfn attribute for=Approves>isApprovedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>, <a spec="http://opencaesar.io/foundation/project" lt="HasAssignment">HasAssignment</a>
+
+## <dfn>Authorizes</dfn> ## {#heading-Authorizes}
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Authority">Authority</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Authority">Authority</a>
+
+*Forward:*
+<dfn attribute for=Authorizes>authorizes</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+## <dfn>BelongsTo</dfn> ## {#heading-BelongsTo}
+A <classname>Person</classname> <property>belongsTo</property> zero or more <classname>Organization</classname>s.
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Person">Person</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Organization">Organization</a>
+
+*Forward:*
+<dfn attribute for=BelongsTo>belongsTo</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+## <dfn>Binds</dfn> ## {#heading-Binds}
+See <property>binds</property>.
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Policy">Policy</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/mission" lt="SpecifiedElement">mission:SpecifiedElement</a>
+
+*Forward:*
+<dfn attribute for=Binds>binds</dfn>
+
+*Inverse:*
+<dfn attribute for=Binds>isBoundBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+## <dfn>Concurs</dfn> ## {#heading-Concurs}
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Role">Role</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Product">Product</a>
+
+*Forward:*
+<dfn attribute for=Concurs>concurs</dfn>
+
+*Inverse:*
+<dfn attribute for=Concurs>isConcurredBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>, <a spec="http://opencaesar.io/foundation/project" lt="HasAssignment">HasAssignment</a>
+
+## <dfn>DelegatesTo</dfn> ## {#heading-DelegatesTo}
+See <property>delegatesTo</property>.
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Role">Role</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Role">Role</a>
+
+*Forward:*
+<dfn attribute for=DelegatesTo>delegatesTo</dfn>
+
+*Inverse:*
+<dfn attribute for=DelegatesTo>isDelegateOf</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+## <dfn>Delivers</dfn> ## {#heading-Delivers}
+See <property>delivers</property>.
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="InterchangePoint">InterchangePoint</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Deliverable">Deliverable</a>
+
+*Forward:*
+<dfn attribute for=Delivers>delivers</dfn>
+
+*Inverse:*
+<dfn attribute for=Delivers>isDeliveredBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/project" lt="AssignedElement">AssignedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+## <dfn>Describes</dfn> ## {#heading-Describes}
+See <property>describes</property>.
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Product">Product</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="DevelopedElement">DevelopedElement</a>
+
+*Forward:*
+<dfn attribute for=Describes>describes</dfn>
+
+*Inverse:*
+<dfn attribute for=Describes>isDescribedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+## <dfn>Executes</dfn> ## {#heading-Executes}
+See <property>executes</property>.
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Authority">Authority</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Process">Process</a>
+
+*Forward:*
+<dfn attribute for=Executes>executes</dfn>
+
+*Inverse:*
+<dfn attribute for=Executes>isExecutedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/project" lt="AssignedElement">AssignedElement</a>, <a spec="http://opencaesar.io/foundation/mission" lt="SpecifiedElement">mission:SpecifiedElement</a>
+
+## <dfn>HasAssignment</dfn> ## {#heading-HasAssignment}
+A <classname>Role</classname>\n<replaceable>r</replaceable>\n<property>hasAssignment</property>\nsome <classname>AssignedElement</classname>\n<replaceable>e</replaceable>\nif and only if \n<replaceable>r</replaceable>\nhas specific cognizance and/or responsibility for\n<replaceable>e</replaceable>.
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Role">Role</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="AssignedElement">AssignedElement</a>
+
+*Forward:*
+<dfn attribute for=HasAssignment>hasAssignment</dfn>
+
+*Inverse:*
+<dfn attribute for=HasAssignment>isAssignedTo</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+*Sub terms:*
+<a spec="http://opencaesar.io/foundation/project" lt="Approves">Approves</a>, <a spec="http://opencaesar.io/foundation/project" lt="Concurs">Concurs</a>, <a spec="http://opencaesar.io/foundation/project" lt="Prepares">Prepares</a>
+
+## <dfn>HasParticipant</dfn> ## {#heading-HasParticipant}
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Interchange">Interchange</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Deliverable">Deliverable</a>
+
+*Forward:*
+<dfn attribute for=HasParticipant>hasParticipant</dfn>
+
+*Inverse:*
+<dfn attribute for=HasParticipant>participatesIn</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+## <dfn>HasResponsibilityFor</dfn> ## {#heading-HasResponsibilityFor}
+An <classname>Organization</classname>\n<replaceable>o</replaceable>\n<property>hasResponsibilityFor</property>\nsome <classname>Authority</classname>\n<replaceable>a</replaceable>\nif and only if \n<replaceable>o</replaceable>\nprovides the actual workforce and execution of the work embodied in\n<replaceable>a</replaceable>. An example is the relation between a \"doing\" <classname>Organization</classname> and a <classname>WorkPackage</classname>.
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Organization">Organization</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Authority">Authority</a>
+
+*Forward:*
+<dfn attribute for=HasResponsibilityFor>hasResponsibilityFor</dfn>
+
+*Inverse:*
+<dfn attribute for=HasResponsibilityFor>isResponsibilityOf</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+## <dfn>HasRole</dfn> ## {#heading-HasRole}
+See <property>hasRole</property>.
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Person">Person</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Role">Role</a>
+
+*Forward:*
+<dfn attribute for=HasRole>hasRole</dfn>
+
+*Inverse:*
+<dfn attribute for=HasRole>isRoleOf</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+## <dfn>InterchangesThrough</dfn> ## {#heading-InterchangesThrough}
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Process">Process</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="InterchangePoint">InterchangePoint</a>
+
+*Forward:*
+<dfn attribute for=InterchangesThrough>interchangesThrough</dfn>
+
+*Inverse:*
+<dfn attribute for=InterchangesThrough>isInterchangePointFor</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+## <dfn>Invokes</dfn> ## {#heading-Invokes}
+A <classname>PerformedElement</classname> <replaceable>p</replaceable> <property>invokes</property> a <classname>PerformedElement</classname> <replaceable>c</replaceable> if and only if the execution of <replaceable>c</replaceable> may be triggered or caused by and within the execution of <replaceable>p</replaceable>.
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Process">Process</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Process">Process</a>
+
+*Forward:*
+<dfn attribute for=Invokes>invokes</dfn>
+
+*Inverse:*
+<dfn attribute for=Invokes>isInvokedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+## <dfn>Involves</dfn> ## {#heading-Involves}
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Interchange">Interchange</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Process">Process</a>
+
+*Forward:*
+<dfn attribute for=Involves>involves</dfn>
+
+*Inverse:*
+<dfn attribute for=Involves>isInvolvedIn</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+*Sub terms:*
+<a spec="http://opencaesar.io/foundation/project" lt="Involves1">Involves1</a>, <a spec="http://opencaesar.io/foundation/project" lt="Involves2">Involves2</a>
+
+## <dfn>Involves1</dfn> ## {#heading-Involves1}
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Interchange">Interchange</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Process">Process</a>
+
+*Forward:*
+<dfn attribute for=Involves1>involves1</dfn>
+
+*Inverse:*
+<dfn attribute for=Involves1>isInvolvedIn1</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/project" lt="Involves">Involves</a>
+
+## <dfn>Involves2</dfn> ## {#heading-Involves2}
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Interchange">Interchange</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Process">Process</a>
+
+*Forward:*
+<dfn attribute for=Involves2>involves2</dfn>
+
+*Inverse:*
+<dfn attribute for=Involves2>isInvolvedIn2</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/project" lt="Involves">Involves</a>
+
+## <dfn>Manifests</dfn> ## {#heading-Manifests}
+A <classname>DevelopmentalElement</classname>\n<replaceable>e</replaceable>\nhas <property>manifests</property>\na <classname>DevelopmentState</classname>\n<replaceable>s</replaceable>\nif and only if\n<replaceable>e</replaceable>\nattains\n<replaceable>s</replaceable>\nduring its development process.
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="DevelopedElement">DevelopedElement</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="DevelopmentState">DevelopmentState</a>
+
+*Forward:*
+<dfn attribute for=Manifests>manifests</dfn>
+
+*Inverse:*
+<dfn attribute for=Manifests>isManfestedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+## <dfn>Prepares</dfn> ## {#heading-Prepares}
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Role">Role</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Product">Product</a>
+
+*Forward:*
+<dfn attribute for=Prepares>prepares</dfn>
+
+*Inverse:*
+<dfn attribute for=Prepares>isPreparedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>, <a spec="http://opencaesar.io/foundation/project" lt="HasAssignment">HasAssignment</a>
+
+## <dfn>Produces</dfn> ## {#heading-Produces}
+Subproperty of <property>isSuppliedBy</property>. Candidate for deprecation.
+See <property>produces</property>.
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Authority">Authority</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Product">Product</a>
+
+*Forward:*
+<dfn attribute for=Produces>produces</dfn>
+
+*Inverse:*
+<dfn attribute for=Produces>isProducedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>, <a spec="http://opencaesar.io/foundation/project" lt="Supplies">Supplies</a>
+
+## <dfn>Realizes</dfn> ## {#heading-Realizes}
+A <classname>SpecifiedElement</classname>\n<replaceable>c<subscript>1</subscript></replaceable>\n<property>realizes</property>\na <classname>SpecifiedElement</classname>\n<replaceable>c<subscript>2</subscript></replaceable>\nif and only if\n<replaceable>c<subscript>1</subscript></replaceable>\nis proffered by a supplier as a specification-compliant implementation of <replaceable>c<subscript>2</subscript></replaceable>.
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="RealizedElement">RealizedElement</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="RealizedElement">RealizedElement</a>
+
+*Forward:*
+<dfn attribute for=Realizes>realizes</dfn>
+
+*Inverse:*
+<dfn attribute for=Realizes>isRealizedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+## <dfn>Receives</dfn> ## {#heading-Receives}
+A<classname>Process</classname> <replaceable>p</replaceable> <property>receives</property> a <classname>Deliverable</classname> <replaceable>r</replaceable> if and only if the successful execution of <replaceable>p</replaceable> is contingent on the receipt of <replaceable>r</replaceable>.
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="InterchangePoint">InterchangePoint</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Deliverable">Deliverable</a>
+
+*Forward:*
+<dfn attribute for=Receives>receives</dfn>
+
+*Inverse:*
+<dfn attribute for=Receives>isReceivedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/project" lt="AssignedElement">AssignedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+## <dfn>ReliesOn</dfn> ## {#heading-ReliesOn}
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Authority">Authority</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="DevelopedElement">DevelopedElement</a>
+
+*Forward:*
+<dfn attribute for=ReliesOn>reliesOn</dfn>
+
+*Inverse:*
+<dfn attribute for=ReliesOn>isReliedOnBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/project" lt="AssignedElement">AssignedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+## <dfn>Represents</dfn> ## {#heading-Represents}
+See <property>represents</property>.
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Stakeholder">Stakeholder</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="Concern">Concern</a>
+
+*Forward:*
+<dfn attribute for=Represents>represents</dfn>
+
+*Inverse:*
+<dfn attribute for=Represents>isRepresentedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+## <dfn>Supplies</dfn> ## {#heading-Supplies}
+A <classname>WorkPackage</classname> <replaceable>w</replaceable> <property>supplies</property> a <classname>Component</classname> <replaceable>c</replaceable> if and only if <replaceable>w</replaceable> is responsible for the acquisition and delivery of <replaceable>c</replaceable>.
+
+*Source:*
+<a spec="http://opencaesar.io/foundation/project" lt="Authority">Authority</a>
+
+*Target:*
+<a spec="http://opencaesar.io/foundation/project" lt="SuppliedElement">SuppliedElement</a>
+
+*Forward:*
+<dfn attribute for=Supplies>supplies</dfn>
+
+*Inverse:*
+<dfn attribute for=Supplies>isSuppliedBy</dfn>
+
+*Super terms:*
+<a spec="http://opencaesar.io/foundation/analysis" lt="AnalyzedElement">analysis:AnalyzedElement</a>, <a spec="http://opencaesar.io/foundation/project" lt="AssignedElement">AssignedElement</a>, <a spec="http://opencaesar.io/foundation/analysis" lt="CharacterizedElement">analysis:CharacterizedElement</a>
+
+*Sub terms:*
+<a spec="http://opencaesar.io/foundation/project" lt="Produces">Produces</a>
+
+# Scalars # {#heading-scalars}
+## <dfn>date</dfn> ## {#heading-date}
+
+
+# Scalar Properties # {#heading-scalarproperties}
+## <dfn>isRequiredNotLaterThan</dfn> ## {#heading-isRequiredNotLaterThan}
+A <classname>ScheduledElement</classname> <replaceable>e</replaceable>  <property>isRequiredNotLaterThan</property> <replaceable>d</replaceable> if and only if <replaceable>e</replaceable> must be completed or achieved no later than <replaceable>d</replaceable>.
+Scalar property type: <a spec="http://opencaesar.io/foundation/project" lt="date">date</a>
+
+
+</div>
+<style>
+a[data-link-type=biblio] {
+    white-space: pre-wrap;
+}
+</style>

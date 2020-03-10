@@ -1,0 +1,134 @@
+// @dc:title "S*Metamodel Interface Pattern"
+
+vocabulary <http://incose.org/pwg/s-star/interface> with # as interface {
+
+    extends <http://purl.org/dc/elements/1.1> as dc
+
+    concept Interface
+
+    concept System
+
+    concept InputOutput
+
+    concept ExternalInputOutput :> InputOutput
+
+    concept InternalInputOutput :> InputOutput
+
+    concept FunctionalInteraction
+
+    concept SystemOfAccess :> System
+
+    concept PhysicalSystem :> System
+
+    concept ModeledAttribute
+
+    concept Port
+
+    concept InputPort [
+        restricts all relation sends to InternalInputOutput
+        restricts all relation receives to ExternalInputOutput
+    ]
+
+    concept OutputPort [
+        restricts all relation sends to ExternalInputOutput
+        restricts all relation receives to InternalInputOutput
+   ]
+
+    concept Domain
+
+    concept ArchitecturalRelationship
+
+    concept Anything
+
+    relation entity ProvidesInterface [
+        from System
+        to Interface
+        forward providesInterface
+        inverse functional
+    ]
+
+    relation entity PermitsFunctionalInteraction [
+        from Interface
+        to FunctionalInteraction
+        forward permitsFunctionalInteraction
+    ]
+
+    relation entity PermitsInputOutput [
+        from Interface
+        to InputOutput
+        forward permitsInputOutput
+    ]
+
+    relation entity PermitsArchitecturalRelationship [
+        from Interface
+        to ArchitecturalRelationship
+        forward permitsArchitecturalRelationship
+    ]
+
+    relation entity Groups [
+        from Interface
+        to Port
+        forward groups
+    ]
+
+    relation entity PermitsSOA [
+        from Interface
+        to SystemOfAccess
+        forward permitsSOA
+    ]
+
+    relation entity HasAttribute [
+        from Anything
+        to ModeledAttribute
+        forward hasAttribute
+    ]
+
+    relation entity InteractsThrough [
+        from System
+        to Port
+        forward interactsThrough
+        inverse functional
+    ]
+
+    relation entity HasSubject [
+        from Domain
+        to System
+        forward hasSubject
+    ]
+
+//    relation entity AllocatedTo [
+//        from ?
+//        to ?
+//        forward allocatedTo
+//    ]
+
+    relation entity Exemplifies [
+        from InputOutput
+        to ArchitecturalRelationship
+        forward exemplifies
+    ]
+
+    relation entity EmergesFrom [
+        from InputOutput // summarized?
+        to ArchitecturalRelationship
+        forward emergesFrom
+    ]
+
+    relation entity Sends [
+        from Port
+        to InputOutput
+        forward sends
+    ]
+
+    relation entity Receives [
+        from Port
+        to InputOutput
+        forward receives
+    ]
+
+    relation entity IsUsedDuring [
+        from Port
+        to FunctionalInteraction
+        forward isUsedDuring
+    ]
+}

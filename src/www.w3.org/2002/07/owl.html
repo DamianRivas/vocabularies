@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>DC</title>
+  <title>OWL2</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1221,9 +1221,9 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 792aee41, updated Fri Jun 5 17:22:42 2020 -0700" name="generator">
-  <link href="https://opencaesar.github.io/vocabularies//purl.org/dc/elements/1.1" rel="canonical">
-  <meta content="36249611dcf9f898413746611d0953b93ac15c7f" name="document-revision">
+  <meta content="Bikeshed version f539c4af, updated Mon Aug 10 11:34:58 2020 -0700" name="generator">
+  <link href="https://opencaesar.github.io/vocabularies//src/www.w3.org/2002/07/owl" rel="canonical">
+  <meta content="4d9bd9406074998e416949a9e4a525fdbbfd9e77" name="document-revision">
 <style>
 a[data-link-type=biblio] {
     white-space: pre-wrap;
@@ -1379,16 +1379,16 @@ dfn > a.self-link::before      { content: "#"; }</style>
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"><a class="logo" href="https://www.openapis.org/"><img alt="OpenAPI Initiative" height="48" src="https://opencaesar.github.io/oml/images/oml.svg"></a></p>
-   <h1 class="p-name no-ref allcaps" id="title">DC</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-06-07">7 June 2020</time></span></h2>
+   <h1 class="p-name no-ref allcaps" id="title">OWL2</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Commit Snapshot, <time class="dt-updated" datetime="2020-08-13">13 August 2020</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="https://opencaesar.github.io/vocabularies//purl.org/dc/elements/1.1">https://opencaesar.github.io/vocabularies//purl.org/dc/elements/1.1</a>
+     <dd><a class="u-url" href="https://opencaesar.github.io/vocabularies//src/www.w3.org/2002/07/owl">https://opencaesar.github.io/vocabularies//src/www.w3.org/2002/07/owl</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><span class="p-name fn">DCMI Usage Board</span>
+     <dd class="editor p-author h-card vcard"><span class="p-name fn">W3C</span>
      <dt>Copyright:
-     <dd>Copyright 1995-2019 DCMI.
+     <dd>Copyright 2002 W3C.
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1396,32 +1396,28 @@ dfn > a.self-link::before      { content: "#"; }</style>
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>The DC vocabulary is a subset of the vocabulary maintained by the Dublin Core Metadata Initiative.</p>
+   <p>The OWL2 vocabulary is a subset of the vocabulary maintained by the W3C.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
     <li><a href="#Namespace"><span class="secno">1</span> <span class="content">Namespace</span></a>
+    <li><a href="#Extensions"><span class="secno">2</span> <span class="content">Extensions</span></a>
     <li>
-     <a href="#AnnotationProperties"><span class="secno">2</span> <span class="content">Annotation Properties</span></a>
+     <a href="#Scalars"><span class="secno">3</span> <span class="content">Scalars</span></a>
      <ol class="toc">
-      <li><a href="#Contributor"><span class="secno">2.1</span> <span class="content"><span>contributor</span></span></a>
-      <li><a href="#Coverage"><span class="secno">2.2</span> <span class="content"><span>coverage</span></span></a>
-      <li><a href="#Creator"><span class="secno">2.3</span> <span class="content"><span>creator</span></span></a>
-      <li><a href="#Date"><span class="secno">2.4</span> <span class="content"><span>date</span></span></a>
-      <li><a href="#Description"><span class="secno">2.5</span> <span class="content"><span>description</span></span></a>
-      <li><a href="#Format"><span class="secno">2.6</span> <span class="content"><span>format</span></span></a>
-      <li><a href="#Identifier"><span class="secno">2.7</span> <span class="content"><span>identifier</span></span></a>
-      <li><a href="#Language"><span class="secno">2.8</span> <span class="content"><span>language</span></span></a>
-      <li><a href="#Publisher"><span class="secno">2.9</span> <span class="content"><span>publisher</span></span></a>
-      <li><a href="#Relation"><span class="secno">2.10</span> <span class="content"><span>relation</span></span></a>
-      <li><a href="#Rights"><span class="secno">2.11</span> <span class="content"><span>rights</span></span></a>
-      <li><a href="#Source"><span class="secno">2.12</span> <span class="content"><span>source</span></span></a>
-      <li><a href="#Subject"><span class="secno">2.13</span> <span class="content"><span>subject</span></span></a>
-      <li><a href="#Title"><span class="secno">2.14</span> <span class="content"><span>title</span></span></a>
-      <li><a href="#Type"><span class="secno">2.15</span> <span class="content"><span>type</span></span></a>
-      <li><a href="#HasVersion"><span class="secno">2.16</span> <span class="content"><span>hasVersion</span></span></a>
+      <li><a href="#Rational"><span class="secno">3.1</span> <span class="content"><span>rational</span></span></a>
+      <li><a href="#Real"><span class="secno">3.2</span> <span class="content"><span>real</span></span></a>
+     </ol>
+    <li>
+     <a href="#AnnotationProperties"><span class="secno">4</span> <span class="content">Annotation Properties</span></a>
+     <ol class="toc">
+      <li><a href="#BackwardCompatibleWith"><span class="secno">4.1</span> <span class="content"><span>backwardCompatibleWith</span></span></a>
+      <li><a href="#Deprecated"><span class="secno">4.2</span> <span class="content"><span>deprecated</span></span></a>
+      <li><a href="#IncompatibleWith"><span class="secno">4.3</span> <span class="content"><span>incompatibleWith</span></span></a>
+      <li><a href="#PriorVersion"><span class="secno">4.4</span> <span class="content"><span>priorVersion</span></span></a>
+      <li><a href="#VersionInfo"><span class="secno">4.5</span> <span class="content"><span>versionInfo</span></span></a>
      </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1435,25 +1431,25 @@ dfn > a.self-link::before      { content: "#"; }</style>
     <h2 class="heading settled" data-level="1" id="Namespace"><span class="secno">1. </span><span class="content">Namespace</span><a class="self-link" href="#Namespace"></a></h2>
     <ul>
      <li data-md>
-      <p>dc: <a href="1.1.html">http://purl.org/dc/elements/1.1</a></p>
+      <p>owl: <a href="owl.html">http://www.w3.org/2002/07/owl</a></p>
     </ul>
-    <h2 class="heading settled" data-level="2" id="AnnotationProperties"><span class="secno">2. </span><span class="content">Annotation Properties</span><a class="self-link" href="#AnnotationProperties"></a></h2>
-    <h3 class="heading settled" data-level="2.1" id="Contributor"><span class="secno">2.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="contributor">contributor<a class="self-link" href="#contributor"></a></dfn></span><a class="self-link" href="#Contributor"></a></h3>
-    <h3 class="heading settled" data-level="2.2" id="Coverage"><span class="secno">2.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="coverage">coverage<a class="self-link" href="#coverage"></a></dfn></span><a class="self-link" href="#Coverage"></a></h3>
-    <h3 class="heading settled" data-level="2.3" id="Creator"><span class="secno">2.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="creator">creator<a class="self-link" href="#creator"></a></dfn></span><a class="self-link" href="#Creator"></a></h3>
-    <h3 class="heading settled" data-level="2.4" id="Date"><span class="secno">2.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="date">date<a class="self-link" href="#date"></a></dfn></span><a class="self-link" href="#Date"></a></h3>
-    <h3 class="heading settled" data-level="2.5" id="Description"><span class="secno">2.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="description">description<a class="self-link" href="#description"></a></dfn></span><a class="self-link" href="#Description"></a></h3>
-    <h3 class="heading settled" data-level="2.6" id="Format"><span class="secno">2.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="format">format<a class="self-link" href="#format"></a></dfn></span><a class="self-link" href="#Format"></a></h3>
-    <h3 class="heading settled" data-level="2.7" id="Identifier"><span class="secno">2.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="identifier">identifier<a class="self-link" href="#identifier"></a></dfn></span><a class="self-link" href="#Identifier"></a></h3>
-    <h3 class="heading settled" data-level="2.8" id="Language"><span class="secno">2.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="language">language<a class="self-link" href="#language"></a></dfn></span><a class="self-link" href="#Language"></a></h3>
-    <h3 class="heading settled" data-level="2.9" id="Publisher"><span class="secno">2.9. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="publisher">publisher<a class="self-link" href="#publisher"></a></dfn></span><a class="self-link" href="#Publisher"></a></h3>
-    <h3 class="heading settled" data-level="2.10" id="Relation"><span class="secno">2.10. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="relation">relation<a class="self-link" href="#relation"></a></dfn></span><a class="self-link" href="#Relation"></a></h3>
-    <h3 class="heading settled" data-level="2.11" id="Rights"><span class="secno">2.11. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rights">rights<a class="self-link" href="#rights"></a></dfn></span><a class="self-link" href="#Rights"></a></h3>
-    <h3 class="heading settled" data-level="2.12" id="Source"><span class="secno">2.12. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="source">source<a class="self-link" href="#source"></a></dfn></span><a class="self-link" href="#Source"></a></h3>
-    <h3 class="heading settled" data-level="2.13" id="Subject"><span class="secno">2.13. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="subject">subject<a class="self-link" href="#subject"></a></dfn></span><a class="self-link" href="#Subject"></a></h3>
-    <h3 class="heading settled" data-level="2.14" id="Title"><span class="secno">2.14. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="title①">title<a class="self-link" href="#title①"></a></dfn></span><a class="self-link" href="#Title"></a></h3>
-    <h3 class="heading settled" data-level="2.15" id="Type"><span class="secno">2.15. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="type">type<a class="self-link" href="#type"></a></dfn></span><a class="self-link" href="#Type"></a></h3>
-    <h3 class="heading settled" data-level="2.16" id="HasVersion"><span class="secno">2.16. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hasversion">hasVersion<a class="self-link" href="#hasversion"></a></dfn></span><a class="self-link" href="#HasVersion"></a></h3>
+    <h2 class="heading settled" data-level="2" id="Extensions"><span class="secno">2. </span><span class="content">Extensions</span><a class="self-link" href="#Extensions"></a></h2>
+    <ul>
+     <li data-md>
+      <p>rdf: <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns.html">http://www.w3.org/1999/02/22-rdf-syntax-ns</a></p>
+     <li data-md>
+      <p>rdfs: <a href="http://www.w3.org/2000/01/rdf-schema.html">http://www.w3.org/2000/01/rdf-schema</a></p>
+    </ul>
+    <h2 class="heading settled" data-level="3" id="Scalars"><span class="secno">3. </span><span class="content">Scalars</span><a class="self-link" href="#Scalars"></a></h2>
+    <h3 class="heading settled" data-level="3.1" id="Rational"><span class="secno">3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rational">rational<a class="self-link" href="#rational"></a></dfn></span><a class="self-link" href="#Rational"></a></h3>
+    <p><em>pattern:</em> [\-+]?[0-9]+\\/[1-9][0-9]*</p>
+    <h3 class="heading settled" data-level="3.2" id="Real"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="real">real<a class="self-link" href="#real"></a></dfn></span><a class="self-link" href="#Real"></a></h3>
+    <h2 class="heading settled" data-level="4" id="AnnotationProperties"><span class="secno">4. </span><span class="content">Annotation Properties</span><a class="self-link" href="#AnnotationProperties"></a></h2>
+    <h3 class="heading settled" data-level="4.1" id="BackwardCompatibleWith"><span class="secno">4.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="backwardcompatiblewith">backwardCompatibleWith<a class="self-link" href="#backwardcompatiblewith"></a></dfn></span><a class="self-link" href="#BackwardCompatibleWith"></a></h3>
+    <h3 class="heading settled" data-level="4.2" id="Deprecated"><span class="secno">4.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="deprecated">deprecated<a class="self-link" href="#deprecated"></a></dfn></span><a class="self-link" href="#Deprecated"></a></h3>
+    <h3 class="heading settled" data-level="4.3" id="IncompatibleWith"><span class="secno">4.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="incompatiblewith">incompatibleWith<a class="self-link" href="#incompatiblewith"></a></dfn></span><a class="self-link" href="#IncompatibleWith"></a></h3>
+    <h3 class="heading settled" data-level="4.4" id="PriorVersion"><span class="secno">4.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="priorversion">priorVersion<a class="self-link" href="#priorversion"></a></dfn></span><a class="self-link" href="#PriorVersion"></a></h3>
+    <h3 class="heading settled" data-level="4.5" id="VersionInfo"><span class="secno">4.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="versioninfo">versionInfo<a class="self-link" href="#versioninfo"></a></dfn></span><a class="self-link" href="#VersionInfo"></a></h3>
    </div>
   </main>
 <script>
@@ -1588,20 +1584,11 @@ dfn > a.self-link::before      { content: "#"; }</style>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#contributor">contributor</a><span>, in §2.1</span>
-   <li><a href="#coverage">coverage</a><span>, in §2.2</span>
-   <li><a href="#creator">creator</a><span>, in §2.3</span>
-   <li><a href="#date">date</a><span>, in §2.4</span>
-   <li><a href="#description">description</a><span>, in §2.5</span>
-   <li><a href="#format">format</a><span>, in §2.6</span>
-   <li><a href="#hasversion">hasVersion</a><span>, in §2.16</span>
-   <li><a href="#identifier">identifier</a><span>, in §2.7</span>
-   <li><a href="#language">language</a><span>, in §2.8</span>
-   <li><a href="#publisher">publisher</a><span>, in §2.9</span>
-   <li><a href="#relation">relation</a><span>, in §2.10</span>
-   <li><a href="#rights">rights</a><span>, in §2.11</span>
-   <li><a href="#source">source</a><span>, in §2.12</span>
-   <li><a href="#subject">subject</a><span>, in §2.13</span>
-   <li><a href="#title①">title</a><span>, in §2.14</span>
-   <li><a href="#type">type</a><span>, in §2.15</span>
+   <li><a href="#backwardcompatiblewith">backwardCompatibleWith</a><span>, in §4.1</span>
+   <li><a href="#deprecated">deprecated</a><span>, in §4.2</span>
+   <li><a href="#incompatiblewith">incompatibleWith</a><span>, in §4.3</span>
+   <li><a href="#priorversion">priorVersion</a><span>, in §4.4</span>
+   <li><a href="#rational">rational</a><span>, in §3.1</span>
+   <li><a href="#real">real</a><span>, in §3.2</span>
+   <li><a href="#versioninfo">versionInfo</a><span>, in §4.5</span>
   </ul>

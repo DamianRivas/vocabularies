@@ -1,0 +1,19 @@
+vocabulary <http://imce.jpl.nasa.gov/foundation/diagram> with # as diagram {
+
+    annotation property specifier
+
+    annotation property include
+
+    annotation property exclude
+
+    annotation property id
+
+    annotation property source
+
+    annotation property target
+    
+    annotation property hierarchy
+    
+    annotation property counter
+
+}

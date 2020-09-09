@@ -1,0 +1,31 @@
+@diagram:specifier
+vocabulary <http://imce.jpl.nasa.gov/foundation/metrology/core> with # as core {
+
+    extends <http://imce.jpl.nasa.gov/foundation/diagram>
+    extends <http://imce.jpl.nasa.gov/foundation/metrology>
+
+    // diagrams in annex c5
+    // @diagram:relate metrology:QuantityKind
+    // @diagram:relate metrology:SystemOfUnits
+    @diagram:include
+    ref concept metrology:MeasurementUnit
+
+    @diagram:include
+    ref concept metrology:SystemOfUnits
+
+    @diagram:include
+    ref concept metrology:QuantityKind
+    
+    @diagram:include
+    ref concept metrology:SystemOfQuantities
+
+    // @diagram:include
+    // ref concept metrology:UnitaryQuantityKind
+
+    // @diagram:include
+    // ref relation entity metrology:HasUnit
+
+    // @diagram:include
+    // ref relation entity metrology:SystemHasQuantityKind
+
+}

@@ -1,0 +1,13 @@
+vocabulary <http://imce.jpl.nasa.gov/foundation/sample> with # as sample {
+
+	extends <http://www.w3.org/2002/07/owl>
+
+    
+    aspect dog
+
+    scalar property has4Legs [
+		domain dog
+		range xsd:string
+		functional
+	]
+}

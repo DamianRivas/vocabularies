@@ -1,0 +1,18 @@
+@diagram:specifier
+vocabulary <http://imce.jpl.nasa.gov/foundation/base/sample1> with # as sample1 {
+    extends <http://imce.jpl.nasa.gov/foundation/diagram>
+    extends <http://imce.jpl.nasa.gov/foundation/sample>
+
+    @diagram:include
+    @diagram:id "2"
+    @diagram:include "properties"
+    ref aspect sample:dog
+
+    @diagram:include
+    @diagram:id "1"
+    // @diagram:include "properties"
+    ref aspect sample:dog
+
+    @diagram:include
+    ref scalar property sample:has4Legs
+}

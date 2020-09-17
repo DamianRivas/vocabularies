@@ -13,7 +13,17 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/diagram> with # as diagram {
     annotation property target
     
     annotation property hierarchy
-    
+
     annotation property counter
+
+    annotation property hierarchyHops
+
+    annotation property relateTo
+
+    annotation property relateToHops
+
+    annotation property shortestPath
+
+    annotation property shortestPathHops
 
 }

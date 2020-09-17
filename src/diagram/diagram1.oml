@@ -7,6 +7,7 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/base/diagram1> with # as diagram
 
     extends <http://imce.jpl.nasa.gov/foundation/diagram>
     extends <http://imce.jpl.nasa.gov/foundation/base>
+    extends <http://imce.jpl.nasa.gov/foundation/mission>
 
     // @diagram:exclude
     @diagram:include

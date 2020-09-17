@@ -3,21 +3,23 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/metrology/core> with # as core {
 
     extends <http://imce.jpl.nasa.gov/foundation/diagram>
     extends <http://imce.jpl.nasa.gov/foundation/metrology>
+    extends <http://imce.jpl.nasa.gov/foundation/mission>
 
     // diagrams in annex c5
     // @diagram:relate metrology:QuantityKind
     // @diagram:relate metrology:SystemOfUnits
-    @diagram:include
-    ref concept metrology:MeasurementUnit
+    // @diagram:include
+    // ref concept metrology:MeasurementUnit
 
-    @diagram:include
-    ref concept metrology:SystemOfUnits
+    // @diagram:include
+    // @diagram:relateTo "metrology:Reference"
+    // ref concept metrology:SystemOfUnits
 
-    @diagram:include
-    ref concept metrology:QuantityKind
+    // @diagram:include
+    // ref concept metrology:QuantityKind
     
-    @diagram:include
-    ref concept metrology:SystemOfQuantities
+    // @diagram:include
+    // ref concept metrology:SystemOfQuantities
 
     // @diagram:include
     // ref concept metrology:UnitaryQuantityKind
@@ -27,5 +29,34 @@ vocabulary <http://imce.jpl.nasa.gov/foundation/metrology/core> with # as core {
 
     // @diagram:include
     // ref relation entity metrology:SystemHasQuantityKind
+
+    // @diagram:include
+    // @diagram:shortestPath "metrology:Thing"
+    // @diagram:shortestPathHops 4
+    ref concept metrology:DerivedMeasurementUnit
+
+    // // @diagram:include
+    // // ref concept metrology:SystemOfUnits
+
+    // @diagram:include
+    ref relation entity metrology:HasUnit
+
+    // @diagram:include
+    // @diagram:shortestPath "metrology:Component"
+    // ref concept metrology:Number
+
+    // @diagram:include
+    // @diagram:hierarchy
+    // ref concept metrology:UnitaryQuantityValue
+
+    // @diagram:include
+    // @diagram:hierarchy
+    // @diagram:hierarchyHops 1
+    // ref concept mission:Component
+
+    @diagram:include
+    @diagram:relateTo "metrology:Thing"
+    @diagram:relateToHops 3
+    ref aspect metrology:Component
 
 }
